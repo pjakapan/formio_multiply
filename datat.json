@@ -1,0 +1,275 @@
+var formdata ={
+    "_id": "59b109732f12080007487053",
+    "machineName": "oyofkdgmgvftkra:demo",
+    "modified": "2017-09-12T14:07:47.035Z",
+    "title": "Demo",
+    "display": "form",
+    "name": "demo",
+    "path": "demo",
+    "project": "59b1064f678919000775f836",
+    "action": "https://ja-api.azure-api.net/calc/mul",
+    "created": "2017-09-07T08:55:15.462Z",
+    "components": [
+        {
+            "input": true,
+            "tableView": true,
+            "inputType": "text",
+            "inputMask": "",
+            "label": "A",
+            "key": "a",
+            "placeholder": "A",
+            "prefix": "",
+            "suffix": "",
+            "multiple": false,
+            "defaultValue": "",
+            "protected": false,
+            "unique": false,
+            "persistent": true,
+            "hidden": false,
+            "clearOnHide": true,
+            "validate": {
+                "required": false,
+                "minLength": "",
+                "maxLength": "",
+                "pattern": "",
+                "custom": "",
+                "customPrivate": false
+            },
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "type": "textfield",
+            "properties": {
+                "": ""
+            },
+            "tags": [],
+            "lockKey": true,
+            "source": "59b23806d44a3400077d2c80"
+        },
+        {
+            "input": true,
+            "tableView": true,
+            "inputType": "text",
+            "inputMask": "",
+            "label": "B",
+            "key": "b",
+            "placeholder": "B",
+            "prefix": "",
+            "suffix": "",
+            "multiple": false,
+            "defaultValue": "",
+            "protected": false,
+            "unique": false,
+            "persistent": true,
+            "hidden": false,
+            "clearOnHide": true,
+            "validate": {
+                "required": false,
+                "minLength": "",
+                "maxLength": "",
+                "pattern": "",
+                "custom": "",
+                "customPrivate": false
+            },
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "type": "textfield",
+            "properties": {
+                "": ""
+            },
+            "tags": [],
+            "lockKey": true,
+            "source": "59b23806d44a3400077d2c80"
+        },
+        {
+            "input": true,
+            "tableView": true,
+            "inputType": "text",
+            "inputMask": "",
+            "label": "output",
+            "key": "output",
+            "placeholder": "output",
+            "prefix": "",
+            "suffix": "",
+            "multiple": false,
+            "defaultValue": "",
+            "protected": false,
+            "unique": false,
+            "persistent": true,
+            "hidden": false,
+            "clearOnHide": true,
+            "validate": {
+                "required": false,
+                "minLength": "",
+                "maxLength": "",
+                "pattern": "",
+                "custom": "",
+                "customPrivate": false
+            },
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "type": "textfield",
+            "properties": {
+                "": ""
+            },
+            "tags": [],
+            "lockKey": true,
+            "source": "59b23806d44a3400077d2c80"
+        },
+        {
+            "type": "button",
+            "theme": "primary",
+            "disableOnInvalid": false,
+            "action": "custom",
+            "block": false,
+            "rightIcon": "",
+            "leftIcon": "",
+            "size": "md",
+            "key": "submit",
+            "tableView": false,
+            "label": "Submit",
+            "input": true,
+            "tags": [],
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "properties": {
+                "": ""
+            },
+            "custom": "var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';\n      url += form.submission.data.a\n      url += '&b=';\n      url += form.submission.data.b\n $.ajax({\n        url: url,\n        beforeSend: function (xhrObj) {\n          // Request headers\n        },\n        type: \"GET\"\n      }).done(function (data) {\n        var value = JSON.stringify(data.value);\n   console.log(value);\n   form.submission = {\n  data: {\n    a: form.submission.data.a,\n    b: form.submission.data.b,\n    output: value\n  }\n};\n    }).fail(function (error) {\n        console.log(error);\n      });"
+        }
+    ],
+    "owner": "59b0f3b82f12080007486f7a",
+    "submissionAccess": [
+        {
+            "type": "create_all",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "read_all",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "update_all",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "delete_all",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "create_own",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "read_own",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "update_own",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "delete_own",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "team_read",
+            "roles": []
+        },
+        {
+            "type": "team_write",
+            "roles": []
+        },
+        {
+            "type": "team_admin",
+            "roles": []
+        }
+    ],
+    "access": [
+        {
+            "type": "create_all",
+            "roles": []
+        },
+        {
+            "type": "read_all",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "update_all",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "delete_all",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "create_own",
+            "roles": []
+        },
+        {
+            "type": "read_own",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "update_own",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "delete_own",
+            "roles": [
+                "59b1064f678919000775f839"
+            ]
+        },
+        {
+            "type": "team_read",
+            "roles": []
+        },
+        {
+            "type": "team_write",
+            "roles": []
+        },
+        {
+            "type": "team_admin",
+            "roles": []
+        }
+    ],
+    "tags": [],
+    "type": "form"
+}
