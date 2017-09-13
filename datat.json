@@ -1,7 +1,7 @@
-var formdata ={
+var formdata={
     "_id": "59b109732f12080007487053",
     "machineName": "oyofkdgmgvftkra:demo",
-    "modified": "2017-09-12T14:07:47.035Z",
+    "modified": "2017-09-13T04:45:25.988Z",
     "title": "Demo",
     "display": "form",
     "name": "demo",
@@ -10,6 +10,52 @@ var formdata ={
     "action": "https://ja-api.azure-api.net/calc/mul",
     "created": "2017-09-07T08:55:15.462Z",
     "components": [
+        {
+            "inline": true,
+            "properties": {
+                "": ""
+            },
+            "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+            },
+            "tags": [],
+            "type": "radio",
+            "validate": {
+                "customPrivate": false,
+                "custom": "",
+                "required": false
+            },
+            "clearOnHide": true,
+            "hidden": false,
+            "persistent": true,
+            "protected": false,
+            "defaultValue": "",
+            "values": [
+                {
+                    "label": "add",
+                    "value": "add"
+                },
+                {
+                    "label": "subtract",
+                    "value": "subtract"
+                },
+                {
+                    "label": "multiply",
+                    "value": "mul"
+                },
+                {
+                    "label": "divided",
+                    "value": "divided"
+                }
+            ],
+            "key": "operation",
+            "label": "operation",
+            "inputType": "radio",
+            "tableView": true,
+            "input": true
+        },
         {
             "input": true,
             "tableView": true,
@@ -146,7 +192,7 @@ var formdata ={
             "properties": {
                 "": ""
             },
-            "custom": "var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';\n      url += form.submission.data.a\n      url += '&b=';\n      url += form.submission.data.b\n $.ajax({\n        url: url,\n        beforeSend: function (xhrObj) {\n          // Request headers\n        },\n        type: \"GET\"\n      }).done(function (data) {\n        var value = JSON.stringify(data.value);\n   console.log(value);\n   form.submission = {\n  data: {\n    a: form.submission.data.a,\n    b: form.submission.data.b,\n    output: value\n  }\n};\n    }).fail(function (error) {\n        console.log(error);\n      });"
+            "custom": "var url = 'https://ja-api.azure-api.net/jacalc/calc?opt=';      \nurl += form.submission.data.operation;     \nurl += '&a=';      \nurl += form.submission.data.a;\nurl += '&b=';      \nurl += form.submission.data.b;\n$.ajax({url: url,\n        beforeSend: function (xhrObj) {\n          // Request headers  \n },\n        type: \"GET\"\n      }).done(function (data) {        \nvar value = JSON.stringify(data.value);   \nconsole.log(value);   \nform.submission = { \n data: {    \noperation: form.submission.data.operation,  \na: form.submission.data.a,  \n b: form.submission.data.b,    \noutput: value  \n}\n};   \n }).fail(function (error) {   \n console.log(error);   });"
         }
     ],
     "owner": "59b0f3b82f12080007486f7a",
