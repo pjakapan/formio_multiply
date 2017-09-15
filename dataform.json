@@ -27,7 +27,7 @@
                 "custom": "",
                 "required": false
             },
-            "clearOnHide": false,
+            "clearOnHide": true,
             "hidden": false,
             "persistent": true,
             "protected": false,
@@ -72,7 +72,7 @@
             "unique": false,
             "persistent": true,
             "hidden": false,
-            "clearOnHide": false,
+            "clearOnHide": true,
             "validate": {
                 "required": false,
                 "minLength": "",
@@ -110,7 +110,7 @@
             "unique": false,
             "persistent": true,
             "hidden": false,
-            "clearOnHide": false,
+            "clearOnHide": true,
             "validate": {
                 "required": false,
                 "minLength": "",
@@ -148,7 +148,7 @@
             "unique": false,
             "persistent": true,
             "hidden": false,
-            "clearOnHide": false,
+            "clearOnHide": true,
             "validate": {
                 "required": false,
                 "minLength": "",
@@ -192,7 +192,7 @@
             "properties": {
                 "": ""
             },
-            "custom": "var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';      \nurl += form.submission.data.a;\nurl += '&b=';      \nurl += form.submission.data.b;\n$.ajax({url: url,\n        beforeSend: function (xhrObj) {\n          // Request headers  \n },\n        type: \"GET\"\n      }).done(function (data) {        \nvar value = JSON.stringify(data.value);   \nconsole.log(value);}).fail(function (error) {   \n console.log(error);   });"
+            "custom": "var url = 'https://ja-api.azure-api.net/jacalc/calc?opt=';      \nurl += form.submission.data.operation;     \nurl += '&a=';      \nurl += form.submission.data.a;\nurl += '&b=';      \nurl += form.submission.data.b;\n$.ajax({url: url,\n        beforeSend: function (xhrObj) {\n          // Request headers  \n },\n        type: \"GET\"\n      }).done(function (data) {        \nvar value = JSON.stringify(data.value);   \nconsole.log(value);   \nform.submission = { \n data: {    \noperation: form.submission.data.operation,  \na: form.submission.data.a,  \n b: form.submission.data.b,    \noutput: value  \n}\n};   \n }).fail(function (error) {   \n console.log(error);   });"
         }
     ],
     "owner": "59b0f3b82f12080007486f7a",

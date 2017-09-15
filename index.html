@@ -7,9 +7,19 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type='text/javascript'>
     window.onload = function () {
-      Formio.createForm(document.getElementById('formio'), 'https://examples.form.io/w4', {
-        zoom: '-20'
-      });
+      Formio.createForm(document.getElementById('formio'), (function () {
+        var json = null;
+        $.ajax({
+          'async': false,
+          'global': false,
+          'url': "conditionalwizard.json",
+          'dataType': "json",
+          'success': function (data) {
+            json = data;
+          }
+        });
+        return json;
+      })());
     };
   </script>
 </head>
