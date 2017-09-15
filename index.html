@@ -12,22 +12,22 @@
         $.ajax({
           'async': false,
           'global': false,
-          'url': "json/dataform.json",
+          'url': "json/wizard.json",
           'dataType': "json",
           'success': function (data) {
             json = data;
           }
         });
         return json;
-      })());
-      // .then(function (wizard) {
-      //   wizard.on('nextPage', function (page) {
-      //     console.log(page);
-      //   });
-      //   wizard.on('submit', function (submission) {
-      //     console.log(submission);
-      //   });
-      // });
+      })())
+      .then(function (wizard) {
+        wizard.on('nextPage', function (page) {
+          console.log(page);
+        });
+        wizard.on('submit', function (submission) {
+          console.log(submission);
+        });
+      });
       // var workflow = new FormioWizard(document.getElementById('formio'));
       // workflow.form = (function () {
       //   var json = null;
