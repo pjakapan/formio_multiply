@@ -27,7 +27,7 @@
                 "custom": "",
                 "required": false
             },
-            "clearOnHide": true,
+            "clearOnHide": false,
             "hidden": false,
             "persistent": true,
             "protected": false,
@@ -72,7 +72,7 @@
             "unique": false,
             "persistent": true,
             "hidden": false,
-            "clearOnHide": true,
+            "clearOnHide": false,
             "validate": {
                 "required": false,
                 "minLength": "",
@@ -110,7 +110,7 @@
             "unique": false,
             "persistent": true,
             "hidden": false,
-            "clearOnHide": true,
+            "clearOnHide": false,
             "validate": {
                 "required": false,
                 "minLength": "",
@@ -148,7 +148,7 @@
             "unique": false,
             "persistent": true,
             "hidden": false,
-            "clearOnHide": true,
+            "clearOnHide": false,
             "validate": {
                 "required": false,
                 "minLength": "",
