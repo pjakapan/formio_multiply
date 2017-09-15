@@ -19,14 +19,7 @@
           }
         });
         return json;
-      })).then(function (wizard) {
-        wizard.on('nextPage', function (page) {
-          console.log(page);
-        });
-        wizard.on('submit', function (submission) {
-          console.log(submission);
-        });
-      });
+      }));
     };
   </script>
 </head>
