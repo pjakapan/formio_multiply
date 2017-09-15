@@ -192,7 +192,7 @@
             "properties": {
                 "": ""
             },
-            "custom": "var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';      \nurl += form.submission.data.a;\nurl += '&b=';      \nurl += form.submission.data.b;\n$.ajax({url: url,\n        beforeSend: function (xhrObj) {\n          // Request headers  \n },\n        type: \"GET\"\n      }).done(function (data) {        \nvar value = JSON.stringify(data.value);   \nconsole.log(value);   \n}).fail(function (error) {   \n console.log(error);   });"
+            "custom": "var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';      \nurl += form.submission.data.a;\nurl += '&b=';      \nurl += form.submission.data.b;\n$.ajax({url: url,\n        beforeSend: function (xhrObj) {\n          // Request headers  \n },\n        type: \"GET\"\n      }).done(function (data) {        \nvar value = JSON.stringify(data.value);   \nconsole.log(value); $('[name=data\\[output\\]]').val(data.value);   \n}).fail(function (error) {   \n console.log(error);   });"
         }
     ],
     "owner": "59b0f3b82f12080007486f7a",
