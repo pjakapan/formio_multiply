@@ -12,14 +12,21 @@
         $.ajax({
           'async': false,
           'global': false,
-          'url': "conditionalwizard.json",
+          'url': "wizard.json",
           'dataType': "json",
           'success': function (data) {
             json = data;
           }
         });
         return json;
-      })());
+      })()).then(function (wizard) {
+        wizard.on('nextPage', function (page) {
+          console.log(page);
+        });
+        wizard.on('submit', function (submission) {
+          console.log(submission);
+        });
+      });
     };
   </script>
 </head>
