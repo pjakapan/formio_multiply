@@ -1,10 +1,10 @@
 <html>
 
 <head>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
-  <link rel='stylesheet' href='https://unpkg.com/formiojs@latest/dist/formio.full.min.css'>
-  <script src='https://unpkg.com/formiojs@latest/dist/formio.full.min.js'></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel='stylesheet' href='css/bootstrap.min.css'>
+  <link rel='stylesheet' href='css/formio.full.min.css'>
+  <script src='js/formio.full.min.js'></script>
+  <script src="js/jquery.min.js"></script>
   <script type='text/javascript'>
     window.onload = function () {
       Formio.createForm(document.getElementById('formio'), (function () {
@@ -12,7 +12,7 @@
         $.ajax({
           'async': false,
           'global': false,
-          'url': "dataform.json",
+          'url': "json/dataform.json",
           'dataType': "json",
           'success': function (data) {
             json = data;
