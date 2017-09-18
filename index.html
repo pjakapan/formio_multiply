@@ -33,6 +33,7 @@
             type: "GET"
           }).done(function (data) {
             console.log(data);
+            Promise.resolve(true);
           }).fail(function (err) {
             console.log(err);
           });
