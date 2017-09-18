@@ -13,36 +13,27 @@
         $.ajax({
           'async': false,
           'global': false,
-          'url': "json/dataform.json",
+          'url': "json/demo.json",
           'dataType': "json",
           'success': function (data) {
             json = data;
           }
         });
         return json;
-      })());
-      // .then(function (wizard) {
-      //   wizard.on('nextPage', function (page) {
-      //     console.log(page);
-      //   });
-      //   wizard.on('submit', function (submission) {
-      //     console.log(submission);
-      //   });
-      // });
-      // var workflow = new FormioWizard(document.getElementById('formio'));
-      // workflow.form = (function () {
-      //   var json = null;
-      //   $.ajax({
-      //     'async': false,
-      //     'global': false,
-      //     'url': "multiform.json",
-      //     'dataType': "json",
-      //     'success': function (data) {
-      //       json = data;
-      //     }
-      //   });
-      //   return json;
-      // });
+      })()).then(function (instance) {
+        var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
+        url += submission.data.a;
+        url += '&b=';
+        url += submission.data.b;
+        $.ajax({
+          url: url,
+          type: "GET"
+        }).done(function (data) {
+          console.log(data);
+        }).fail(function (err) {
+          console.log(err);
+        });
+      });
     };
   </script>
 </head>
