@@ -21,7 +21,7 @@
         });
         return json;
       })()).then(function (instance) {
-        instance.on('submit', function (submission) {
+        instance.on('reset', function (submission) {
           var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
           url += submission.data.a;
           url += '&b=';
@@ -31,7 +31,6 @@
             type: "GET"
           }).done(function (data) {
             console.log(data);
-            return true
           }).fail(function (err) {
             console.log(err);
           });
