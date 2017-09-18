@@ -1,14 +1,4 @@
 {
-    "_id": "59b109732f12080007487053",
-    "machineName": "oyofkdgmgvftkra:demo",
-    "modified": "2017-09-18T06:17:01.234Z",
-    "title": "Demo",
-    "display": "form",
-    "name": "demo",
-    "path": "demo",
-    "project": "59b1064f678919000775f836",
-    "action": "https://ja-api.azure-api.net/calc/mul",
-    "created": "2017-09-07T08:55:15.462Z",
     "components": [
         {
             "inline": true,
@@ -483,150 +473,25 @@
             }
         },
         {
-            "input": true,
-            "label": "info",
-            "tableView": false,
             "key": "info",
-            "size": "md",
-            "leftIcon": "",
-            "rightIcon": "",
-            "block": false,
-            "action": "submit",
-            "disableOnInvalid": false,
-            "theme": "info",
             "type": "button",
-            "tags": [],
-            "conditional": {
-                "show": "",
-                "when": null,
-                "eq": ""
-            },
-            "properties": {
-                "": ""
-            }
+            "action": "submit",
+            "label": "info",
+            "theme": "info"
+        },
+        {
+            "key": "danger",
+            "type": "button",
+            "action": "submit",
+            "label": "danger",
+            "theme": "danger"
+        },
+        {
+            "key": "success",
+            "type": "button",
+            "action": "submit",
+            "label": "success",
+            "theme": "success"
         }
-    ],
-    "owner": "59b0f3b82f12080007486f7a",
-    "submissionAccess": [
-        {
-            "type": "create_all",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "read_all",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "update_all",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "delete_all",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "create_own",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "read_own",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "update_own",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "delete_own",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "team_read",
-            "roles": []
-        },
-        {
-            "type": "team_write",
-            "roles": []
-        },
-        {
-            "type": "team_admin",
-            "roles": []
-        }
-    ],
-    "access": [
-        {
-            "type": "create_all",
-            "roles": []
-        },
-        {
-            "type": "read_all",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "update_all",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "delete_all",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "create_own",
-            "roles": []
-        },
-        {
-            "type": "read_own",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "update_own",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "delete_own",
-            "roles": [
-                "59b1064f678919000775f839"
-            ]
-        },
-        {
-            "type": "team_read",
-            "roles": []
-        },
-        {
-            "type": "team_write",
-            "roles": []
-        },
-        {
-            "type": "team_admin",
-            "roles": []
-        }
-    ],
-    "tags": [],
-    "type": "form"
+    ]
 }
