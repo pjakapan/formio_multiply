@@ -23,11 +23,11 @@
       })()).then(function (instance) {
         console.log(instance);
         instance.on('submit', function (submission) {
-          console.log(submission);
           var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
           url += submission.data.a;
           url += '&b=';
           url += submission.data.b;
+          console.log(submission);
           $.ajax({
             url: url,
             type: "GET"
