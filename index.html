@@ -22,9 +22,9 @@
         return json;
       })()).then(function (instance) {
         var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
-        url += submission.data.a;
+        url += form.submission.data.a;
         url += '&b=';
-        url += submission.data.b;
+        url += form.submission.data.b;
         $.ajax({
           url: url,
           type: "GET"
