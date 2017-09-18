@@ -21,17 +21,19 @@
         });
         return json;
       })()).then(function (instance) {
-        var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
-        url += form.submission.data.a;
-        url += '&b=';
-        url += form.submission.data.b;
-        $.ajax({
-          url: url,
-          type: "GET"
-        }).done(function (data) {
-          console.log(data);
-        }).fail(function (err) {
-          console.log(err);
+        instance.on('submit', function (submission) {
+          var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
+          url += form.submission.data.a;
+          url += '&b=';
+          url += form.submission.data.b;
+          $.ajax({
+            url: url,
+            type: "GET"
+          }).done(function (data) {
+            console.log(data);
+          }).fail(function (err) {
+            console.log(err);
+          });
         });
       });
     };
