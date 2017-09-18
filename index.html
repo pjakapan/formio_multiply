@@ -21,7 +21,8 @@
         });
         return json;
       })()).then(function (instance) {
-        instance.on('reset', function (submission) {
+        instance.on('submit', function (submission) {
+          console.log(submission);
           var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
           url += submission.data.a;
           url += '&b=';
@@ -34,6 +35,10 @@
           }).fail(function (err) {
             console.log(err);
           });
+        });
+      }).then(function (instance) {
+        instance.on('reset', function (submission) {
+          console.log(submission);
         });
       });
     };
