@@ -1,0 +1,284 @@
+{
+    "_id": "591c9ec9ed27e70083928086",
+    "machineName": "examples:multiPage",
+    "modified": "2017-05-18T20:46:10.610Z",
+    "title": "Multi Form",
+    "display": "wizard",
+    "name": "multiForm",
+    "path": "multiform",
+    "project": "5692b91fd1028f01000407e3",
+    "created": "2017-05-17T19:04:41.279Z",
+    "components": [
+        {
+            "type": "panel",
+            "title": "A",
+            "nextPage": {
+                "var": "data.a.data.nextPage"
+            },
+            "breadcrumb": "none",
+            "components": [
+                {
+                    "type": "form",
+                    "key": "a",
+                    "path": "a",
+                    "reference": true
+                }
+            ],
+            "input": false,
+            "key": "pageA",
+            "theme": "default",
+            "tags": [],
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "lockKey": true
+        },
+        {
+            "type": "panel",
+            "title": "B",
+            "nextPage": {
+                "var": "data.b.data.nextPage"
+            },
+            "breadcrumb": "none",
+            "components": [
+                {
+                    "type": "form",
+                    "key": "b",
+                    "path": "b",
+                    "reference": true
+                }
+            ],
+            "input": false,
+            "key": "pageB",
+            "theme": "default",
+            "tags": [],
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "lockKey": true
+        },
+        {
+            "type": "panel",
+            "title": "C",
+            "nextPage": {
+                "var": "data.c.data.nextPage"
+            },
+            "breadcrumb": "none",
+            "components": [
+                {
+                    "type": "form",
+                    "key": "c",
+                    "path": "c",
+                    "reference": true
+                }
+            ],
+            "input": false,
+            "key": "pageC",
+            "theme": "default",
+            "tags": [],
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "lockKey": true
+        },
+        {
+            "type": "panel",
+            "title": "D",
+            "nextPage": {
+                "var": "data.d.data.nextPage"
+            },
+            "breadcrumb": "none",
+            "components": [
+                {
+                    "type": "form",
+                    "key": "d",
+                    "path": "d",
+                    "reference": true
+                }
+            ],
+            "input": false,
+            "key": "pageD",
+            "theme": "default",
+            "tags": [],
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "lockKey": true
+        },
+        {
+            "type": "panel",
+            "title": "E",
+            "nextPage": {
+                "var": "data.e.data.nextPage"
+            },
+            "breadcrumb": "none",
+            "components": [
+                {
+                    "type": "form",
+                    "key": "e",
+                    "path": "e",
+                    "reference": true
+                }
+            ],
+            "input": false,
+            "key": "pageE",
+            "theme": "default",
+            "tags": [],
+            "conditional": {
+                "show": "",
+                "when": null,
+                "eq": ""
+            },
+            "lockKey": true
+        },
+        {
+            "lockKey": true,
+            "conditional": {
+                "eq": "",
+                "when": null,
+                "show": ""
+            },
+            "tags": [],
+            "theme": "default",
+            "key": "done",
+            "input": false,
+            "components": [
+                {
+                    "input": false,
+                    "html": "<h2>Are you sure you wish to submit?</h3><ul><li><strong>Page A</strong> --> {{ data.a._id }}</li><li><strong>Page B</strong> --> {{ data.b._id }}</li><li><strong>Page C</strong> --> {{ data.c._id }}</li><li><strong>Page D</strong> --> {{ data.d._id }}</li><li><strong>Page E</strong> --> {{ data.e._id }}</li></ul>",
+                    "type": "content",
+                    "key": "areyousure"
+                }
+            ],
+            "title": "Review",
+            "type": "panel"
+        },
+        {
+            "input": true,
+            "label": "Submit",
+            "tableView": false,
+            "key": "submit",
+            "size": "md",
+            "leftIcon": "",
+            "rightIcon": "",
+            "block": false,
+            "action": "submit",
+            "disableOnInvalid": false,
+            "theme": "primary",
+            "type": "button"
+        }
+    ],
+    "owner": "553dbfc08d22d5cb1a7024f2",
+    "submissionAccess": [
+        {
+            "type": "create_all",
+            "roles": [
+                "5692b920d1028f01000407e6"
+            ]
+        },
+        {
+            "type": "read_all",
+            "roles": [
+                "5692b920d1028f01000407e6"
+            ]
+        },
+        {
+            "type": "update_all",
+            "roles": [
+                "5692b920d1028f01000407e6"
+            ]
+        },
+        {
+            "type": "delete_all",
+            "roles": []
+        },
+        {
+            "type": "create_own",
+            "roles": []
+        },
+        {
+            "type": "read_own",
+            "roles": []
+        },
+        {
+            "type": "update_own",
+            "roles": []
+        },
+        {
+            "type": "delete_own",
+            "roles": []
+        },
+        {
+            "type": "team_read",
+            "roles": []
+        },
+        {
+            "type": "team_write",
+            "roles": []
+        },
+        {
+            "type": "team_admin",
+            "roles": []
+        }
+    ],
+    "access": [
+        {
+            "type": "create_all",
+            "roles": []
+        },
+        {
+            "type": "read_all",
+            "roles": [
+                "5692b920d1028f01000407e4",
+                "5692b920d1028f01000407e5",
+                "5692b920d1028f01000407e6"
+            ]
+        },
+        {
+            "type": "update_all",
+            "roles": []
+        },
+        {
+            "type": "delete_all",
+            "roles": []
+        },
+        {
+            "type": "create_own",
+            "roles": []
+        },
+        {
+            "type": "read_own",
+            "roles": []
+        },
+        {
+            "type": "update_own",
+            "roles": []
+        },
+        {
+            "type": "delete_own",
+            "roles": []
+        },
+        {
+            "type": "team_read",
+            "roles": []
+        },
+        {
+            "type": "team_write",
+            "roles": []
+        },
+        {
+            "type": "team_admin",
+            "roles": []
+        }
+    ],
+    "tags": [],
+    "type": "form"
+}

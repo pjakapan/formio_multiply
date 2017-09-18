@@ -1,0 +1,301 @@
+{
+    "_id": "5683335f0dfe9f01006c498b",
+    "machineName": "wizard:wizard",
+    "modified": "2016-01-12T02:00:14.151Z",
+    "title": "Wizard",
+    "name": "wizard",
+    "path": "wizard",
+    "project": "557e303a13dbd70e77bb6474",
+    "created": "2015-12-30T01:29:03.833Z",
+    "components": [
+        {
+            "type": "panel",
+            "components": [
+                {
+                    "isNew": true,
+                    "type": "columns",
+                    "columns": [
+                        {
+                            "components": [
+                                {
+                                    "type": "textfield",
+                                    "validate": {
+                                        "customPrivate": false,
+                                        "custom": "",
+                                        "pattern": "",
+                                        "maxLength": "",
+                                        "minLength": "",
+                                        "required": true
+                                    },
+                                    "persistent": true,
+                                    "unique": false,
+                                    "protected": false,
+                                    "defaultValue": "",
+                                    "multiple": false,
+                                    "suffix": "",
+                                    "prefix": "",
+                                    "placeholder": "Enter your first name",
+                                    "key": "firstName",
+                                    "label": "First Name",
+                                    "inputMask": "",
+                                    "inputType": "text",
+                                    "tableView": true,
+                                    "input": true
+                                },
+                                {
+                                    "type": "phoneNumber",
+                                    "validate": {
+                                        "required": false
+                                    },
+                                    "persistent": true,
+                                    "unique": false,
+                                    "protected": false,
+                                    "multiple": false,
+                                    "suffix": "",
+                                    "prefix": "",
+                                    "placeholder": "Enter your phone number",
+                                    "key": "phoneNumber",
+                                    "label": "Phone Number",
+                                    "inputMask": "(999) 999-9999",
+                                    "tableView": true,
+                                    "input": true
+                                },
+                                {
+                                    "validate": {
+                                        "required": true
+                                    },
+                                    "input": true,
+                                    "tableView": true,
+                                    "inputType": "email",
+                                    "label": "Email",
+                                    "key": "email",
+                                    "placeholder": "Enter your email address",
+                                    "prefix": "",
+                                    "suffix": "",
+                                    "defaultValue": "",
+                                    "protected": false,
+                                    "unique": false,
+                                    "persistent": true,
+                                    "type": "email"
+                                }
+                            ]
+                        },
+                        {
+                            "components": [
+                                {
+                                    "type": "textfield",
+                                    "validate": {
+                                        "customPrivate": false,
+                                        "custom": "",
+                                        "pattern": "",
+                                        "maxLength": "",
+                                        "minLength": "",
+                                        "required": true
+                                    },
+                                    "persistent": true,
+                                    "unique": false,
+                                    "protected": false,
+                                    "defaultValue": "",
+                                    "multiple": false,
+                                    "suffix": "",
+                                    "prefix": "",
+                                    "placeholder": "Enter your last name",
+                                    "key": "lastName",
+                                    "label": "Last Name",
+                                    "inputMask": "",
+                                    "inputType": "text",
+                                    "tableView": true,
+                                    "input": true
+                                },
+                                {
+                                    "type": "address",
+                                    "validate": {
+                                        "required": false
+                                    },
+                                    "persistent": true,
+                                    "unique": false,
+                                    "protected": false,
+                                    "multiple": false,
+                                    "placeholder": "Enter your phone address",
+                                    "key": "homeAddress",
+                                    "label": "Home Address",
+                                    "tableView": true,
+                                    "input": true
+                                }
+                            ]
+                        }
+                    ],
+                    "input": false
+                }
+            ],
+            "theme": "primary",
+            "title": "Step 1",
+            "input": false
+        },
+        {
+            "type": "panel",
+            "components": [
+                {
+                    "type": "panel",
+                    "components": [
+                        {
+                            "type": "textarea",
+                            "validate": {
+                                "custom": "",
+                                "pattern": "",
+                                "maxLength": "",
+                                "minLength": "",
+                                "required": false
+                            },
+                            "persistent": true,
+                            "protected": false,
+                            "defaultValue": "",
+                            "multiple": false,
+                            "rows": 3,
+                            "suffix": "",
+                            "prefix": "",
+                            "placeholder": "",
+                            "key": "whatdoyoulikeaboutFormio",
+                            "label": "What do you like about Form.io?",
+                            "tableView": true,
+                            "input": true
+                        },
+                        {
+                            "type": "textarea",
+                            "validate": {
+                                "custom": "",
+                                "pattern": "",
+                                "maxLength": "",
+                                "minLength": "",
+                                "required": false
+                            },
+                            "persistent": true,
+                            "protected": false,
+                            "defaultValue": "",
+                            "multiple": false,
+                            "rows": 3,
+                            "suffix": "",
+                            "prefix": "",
+                            "placeholder": "",
+                            "key": "whatnewfeatureswouldyouliketosee",
+                            "label": "What new features would you like to see?",
+                            "tableView": true,
+                            "input": true
+                        },
+                        {
+                            "type": "radio",
+                            "validate": {
+                                "customPrivate": false,
+                                "custom": "",
+                                "required": false
+                            },
+                            "persistent": true,
+                            "protected": false,
+                            "defaultValue": "",
+                            "values": [
+                                {
+                                    "label": "Yes",
+                                    "value": "yes"
+                                },
+                                {
+                                    "label": "No",
+                                    "value": "no"
+                                }
+                            ],
+                            "key": "doyoufindthistooluseful",
+                            "label": "Do you find this tool useful?",
+                            "inputType": "radio",
+                            "tableView": true,
+                            "input": true
+                        }
+                    ],
+                    "theme": "default",
+                    "title": "Survey",
+                    "input": false
+                }
+            ],
+            "theme": "primary",
+            "title": "Step 2",
+            "input": false
+        },
+        {
+            "type": "panel",
+            "components": [
+                {
+                    "type": "textarea",
+                    "validate": {
+                        "custom": "",
+                        "pattern": "",
+                        "maxLength": "",
+                        "minLength": "",
+                        "required": false
+                    },
+                    "persistent": true,
+                    "protected": false,
+                    "defaultValue": "",
+                    "multiple": false,
+                    "rows": 3,
+                    "suffix": "",
+                    "prefix": "",
+                    "placeholder": "Any other comments you would like to make?",
+                    "key": "comments",
+                    "label": "Comments",
+                    "tableView": true,
+                    "input": true
+                }
+            ],
+            "theme": "primary",
+            "title": "Step 3",
+            "input": false
+        }
+    ],
+    "owner": "553dbfc08d22d5cb1a7024f2",
+    "submissionAccess": [
+        {
+            "type": "create_all",
+            "roles": []
+        },
+        {
+            "type": "read_all",
+            "roles": []
+        },
+        {
+            "type": "update_all",
+            "roles": []
+        },
+        {
+            "type": "delete_all",
+            "roles": []
+        },
+        {
+            "type": "create_own",
+            "roles": [
+                "55cd5c3ca51a96bef99ef5ac"
+            ]
+        },
+        {
+            "type": "read_own",
+            "roles": []
+        },
+        {
+            "type": "update_own",
+            "roles": []
+        },
+        {
+            "type": "delete_own",
+            "roles": []
+        }
+    ],
+    "access": [
+        {
+            "type": "read_all",
+            "roles": [
+                "55cd5c3ca51a96bef99ef5aa",
+                "55cd5c3ca51a96bef99ef5ab",
+                "55cd5c3ca51a96bef99ef5ac"
+            ]
+        }
+    ],
+    "tags": [],
+    "type": "form"
+}
