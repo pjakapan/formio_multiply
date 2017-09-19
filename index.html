@@ -9,21 +9,6 @@
   <script type='text/javascript'>
     window.onload = function () {
       Formio.createForm(document.getElementById('formio'), 'https://oyofkdgmgvftkra.form.io/demo');
-
-      Formio.on('submit', function (submission) {
-        console.log('The form was just submitted!!!');
-        Formio.saveSubmission({
-          data: {
-            a: '2',
-            b: '2'
-          }
-        }).then(function (created) {
-          console.log(created);
-        });
-      });
-      form.on('error', (errors) => {
-        console.log('We have errors!');
-      });
     };
   </script>
 </head>
