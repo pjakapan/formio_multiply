@@ -6,31 +6,15 @@
   <script src='js/formio.form.min.js'></script>
   <script type='text/javascript'>
     window.onload = function () {
-      var form = new FormioForm(document.getElementById('formio'), {readOnly: true});
-      form.form = {
-        components: [
-          {
-            type: 'textfield',
-            key: 'firstName',
-            label: 'First Name',
-            placeholder: 'Enter your first name.',
-            input: true
-          },
-          {
-            type: 'textfield',
-            key: 'lastName',
-            label: 'Last Name',
-            placeholder: 'Enter your last name',
-            input: true
-          },
-          {
-            type: 'button',
-            action: 'submit',
-            label: 'Submit',
-            theme: 'primary'
-          }
-        ]
-      };
+      var formio = new Formio('https://myproject.form.io/myform');
+      formio.saveSubmission({
+        data: {
+          firstName: 'Joe',
+          lastName: 'Smith'
+        }
+      }).then(function (created) {
+        console.log(created);
+      });
     };
   </script>
 </head>
