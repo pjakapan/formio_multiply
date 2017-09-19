@@ -9,9 +9,7 @@
   <script type='text/javascript'>
     window.onload = function () {
 
-      var form = new FormioForm(document.getElementById('formio'), {
-        readOnly: true
-      });
+      var form = new FormioForm(document.getElementById('formio'));
       form.src = 'https://oyofkdgmgvftkra.form.io/demo';
       form.on('submit', (submission) => {
         console.log('The form was just submitted!!!');
