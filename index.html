@@ -6,7 +6,7 @@
   <script src='js/formio.form.min.js'></script>
   <script type='text/javascript'>
     window.onload = function () {
-      var form = new FormioForm(document.getElementById('formio'));
+      var form = new FormioForm(document.getElementById('formio'), {readOnly: true});
       form.form = {
         components: [
           {
