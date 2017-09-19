@@ -10,7 +10,7 @@
     window.onload = function () {
       Formio.createForm(document.getElementById('formio'), 'https://oyofkdgmgvftkra.form.io/demo');
 
-      Formio.on('submit', (function (submission) {
+      Formio.on('submit', function (submission) {
         console.log('The form was just submitted!!!');
         Formio.saveSubmission({
           data: {
@@ -20,7 +20,7 @@
         }).then(function (created) {
           console.log(created);
         });
-      }));
+      });
       form.on('error', (errors) => {
         console.log('We have errors!');
       });
