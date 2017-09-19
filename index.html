@@ -10,7 +10,7 @@
     window.onload = function () {
       Formio.createForm(document.getElementById('formio'), 'https://oyofkdgmgvftkra.form.io/demo');
 
-      Formio.on('submit', (submission) => {
+      Formio.on('submit', function (submission) {
         console.log('The form was just submitted!!!');
         Formio.saveSubmission({
           data: {
