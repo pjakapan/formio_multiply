@@ -9,7 +9,7 @@
   <script type='text/javascript'>
     window.onload = function () {
       var form = new FormioForm(document.getElementById('formio'), { noAlerts: false });
-      form.src = (function () {
+      form.form = (function () {
         var json = null;
         $.ajax({
           'async': false,
