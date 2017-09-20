@@ -9,192 +9,205 @@
   <script type='text/javascript'>
     window.onload = function () {
       var form = new FormioForm(document.getElementById('formio'), { noAlerts: false });
-      form.form = {
-        "components": [
-          {
-            "components": [
-              {
-                "properties": {
-                  "": ""
-                },
-                "conditional": {
-                  "eq": "",
-                  "when": null,
-                  "show": ""
-                },
-                "tags": [],
-                "type": "number",
-                "validate": {
-                  "custom": "",
-                  "multiple": "",
-                  "integer": "",
-                  "step": "any",
-                  "max": 10,
-                  "min": 1,
-                  "required": true
-                },
-                "clearOnHide": true,
-                "hidden": false,
-                "persistent": true,
-                "protected": false,
-                "defaultValue": "",
-                "suffix": "",
-                "prefix": "",
-                "placeholder": "Enter your number.",
-                "key": "panel2A",
-                "label": "A",
-                "inputType": "number",
-                "tableView": true,
-                "input": true
-              },
-              {
-                "properties": {
-                  "": ""
-                },
-                "conditional": {
-                  "eq": "",
-                  "when": null,
-                  "show": ""
-                },
-                "tags": [],
-                "type": "number",
-                "validate": {
-                  "custom": "",
-                  "multiple": "",
-                  "integer": "",
-                  "step": "any",
-                  "max": 10,
-                  "min": 1,
-                  "required": true
-                },
-                "clearOnHide": true,
-                "hidden": false,
-                "persistent": true,
-                "protected": false,
-                "defaultValue": "",
-                "suffix": "",
-                "prefix": "",
-                "placeholder": "Enter your number,",
-                "key": "panel2B",
-                "label": "B",
-                "inputType": "number",
-                "tableView": true,
-                "input": true
-              },
-              {
-                "properties": {
-                  "": ""
-                },
-                "conditional": {
-                  "eq": "",
-                  "when": null,
-                  "show": ""
-                },
-                "tags": [],
-                "type": "number",
-                "validate": {
-                  "custom": "",
-                  "multiple": "",
-                  "integer": "",
-                  "step": "any",
-                  "max": "",
-                  "min": "",
-                  "required": false
-                },
-                "clearOnHide": true,
-                "hidden": false,
-                "persistent": true,
-                "protected": false,
-                "defaultValue": "",
-                "suffix": "",
-                "prefix": "",
-                "placeholder": "Your result.",
-                "key": "panel2Result",
-                "label": "Result",
-                "inputType": "number",
-                "tableView": true,
-                "input": true
-              }
-            ],
-            "key": "panel2",
-            "input": false,
-            "title": "",
-            "theme": "primary",
-            "tableView": false,
-            "type": "panel",
-            "breadcrumb": "default",
-            "tags": [],
-            "conditional": {
-              "show": "",
-              "when": null,
-              "eq": ""
-            },
-            "properties": {
-              "": ""
-            }
-          },
-          {
-            "style": {
-              "margin-right": "10px",
-              "margin-top": "10px",
-              "margin-bottom": "10px",
-              "margin-left": "10px"
-            },
-            "input": true,
-            "label": "Submit",
-            "tableView": false,
-            "key": "submit",
-            "size": "md",
-            "leftIcon": "",
-            "rightIcon": "",
-            "block": false,
-            "action": "submit",
-            "disableOnInvalid": true,
-            "theme": "primary",
-            "type": "button",
-            "tags": [],
-            "conditional": {
-              "show": "",
-              "when": null,
-              "eq": ""
-            },
-            "properties": {
-              "": ""
-            },
-            "lockKey": true
-          },
-          {
-            "properties": {
-              "": ""
-            },
-            "conditional": {
-              "eq": "",
-              "when": null,
-              "show": ""
-            },
-            "tags": [],
-            "type": "button",
-            "theme": "default",
-            "disableOnInvalid": true,
-            "action": "reset",
-            "block": false,
-            "rightIcon": "",
-            "leftIcon": "",
-            "size": "md",
-            "key": "cancel",
-            "tableView": false,
-            "label": "Cancel",
-            "input": true,
-            "lockKey": true,
-            "style": {
-              "margin-top": "10px",
-              "margin-right": "10px",
-              "margin-bottom": "10px",
-              "margin-left": "10px"
-            }
+      form.src = (function () {
+        var json = null;
+        $.ajax({
+          'async': false,
+          'global': false,
+          'url': "json/savefile.json",
+          'dataType': "json",
+          'success': function (data) {
+            json = data;
           }
-        ]
-      };
+        });
+        return json;
+      })();
+      // form.form = {
+      //   "components": [
+      //     {
+      //       "components": [
+      //         {
+      //           "properties": {
+      //             "": ""
+      //           },
+      //           "conditional": {
+      //             "eq": "",
+      //             "when": null,
+      //             "show": ""
+      //           },
+      //           "tags": [],
+      //           "type": "number",
+      //           "validate": {
+      //             "custom": "",
+      //             "multiple": "",
+      //             "integer": "",
+      //             "step": "any",
+      //             "max": 10,
+      //             "min": 1,
+      //             "required": true
+      //           },
+      //           "clearOnHide": true,
+      //           "hidden": false,
+      //           "persistent": true,
+      //           "protected": false,
+      //           "defaultValue": "",
+      //           "suffix": "",
+      //           "prefix": "",
+      //           "placeholder": "Enter your number.",
+      //           "key": "panel2A",
+      //           "label": "A",
+      //           "inputType": "number",
+      //           "tableView": true,
+      //           "input": true
+      //         },
+      //         {
+      //           "properties": {
+      //             "": ""
+      //           },
+      //           "conditional": {
+      //             "eq": "",
+      //             "when": null,
+      //             "show": ""
+      //           },
+      //           "tags": [],
+      //           "type": "number",
+      //           "validate": {
+      //             "custom": "",
+      //             "multiple": "",
+      //             "integer": "",
+      //             "step": "any",
+      //             "max": 10,
+      //             "min": 1,
+      //             "required": true
+      //           },
+      //           "clearOnHide": true,
+      //           "hidden": false,
+      //           "persistent": true,
+      //           "protected": false,
+      //           "defaultValue": "",
+      //           "suffix": "",
+      //           "prefix": "",
+      //           "placeholder": "Enter your number.",
+      //           "key": "panel2B",
+      //           "label": "B",
+      //           "inputType": "number",
+      //           "tableView": true,
+      //           "input": true
+      //         },
+      //         {
+      //           "properties": {
+      //             "": ""
+      //           },
+      //           "conditional": {
+      //             "eq": "",
+      //             "when": null,
+      //             "show": ""
+      //           },
+      //           "tags": [],
+      //           "type": "number",
+      //           "validate": {
+      //             "custom": "",
+      //             "multiple": "",
+      //             "integer": "",
+      //             "step": "any",
+      //             "max": "",
+      //             "min": "",
+      //             "required": false
+      //           },
+      //           "clearOnHide": true,
+      //           "hidden": false,
+      //           "persistent": true,
+      //           "protected": false,
+      //           "defaultValue": "",
+      //           "suffix": "",
+      //           "prefix": "",
+      //           "placeholder": "Your result.",
+      //           "key": "panel2Result",
+      //           "label": "Result",
+      //           "inputType": "number",
+      //           "tableView": true,
+      //           "input": true
+      //         }
+      //       ],
+      //       "key": "panel2",
+      //       "input": false,
+      //       "title": "",
+      //       "theme": "primary",
+      //       "tableView": false,
+      //       "type": "panel",
+      //       "breadcrumb": "default",
+      //       "tags": [],
+      //       "conditional": {
+      //         "show": "",
+      //         "when": null,
+      //         "eq": ""
+      //       },
+      //       "properties": {
+      //         "": ""
+      //       }
+      //     },
+      //     {
+      //       "style": {
+      //         "margin-right": "10px",
+      //         "margin-top": "10px",
+      //         "margin-bottom": "10px",
+      //         "margin-left": "10px"
+      //       },
+      //       "input": true,
+      //       "label": "Submit",
+      //       "tableView": false,
+      //       "key": "submit",
+      //       "size": "md",
+      //       "leftIcon": "",
+      //       "rightIcon": "",
+      //       "block": false,
+      //       "action": "submit",
+      //       "disableOnInvalid": true,
+      //       "theme": "primary",
+      //       "type": "button",
+      //       "tags": [],
+      //       "conditional": {
+      //         "show": "",
+      //         "when": null,
+      //         "eq": ""
+      //       },
+      //       "properties": {
+      //         "": ""
+      //       },
+      //       "lockKey": true
+      //     },
+      //     {
+      //       "properties": {
+      //         "": ""
+      //       },
+      //       "conditional": {
+      //         "eq": "",
+      //         "when": null,
+      //         "show": ""
+      //       },
+      //       "tags": [],
+      //       "type": "button",
+      //       "theme": "default",
+      //       "disableOnInvalid": true,
+      //       "action": "reset",
+      //       "block": false,
+      //       "rightIcon": "",
+      //       "leftIcon": "",
+      //       "size": "md",
+      //       "key": "cancel",
+      //       "tableView": false,
+      //       "label": "Cancel",
+      //       "input": true,
+      //       "lockKey": true,
+      //       "style": {
+      //         "margin-top": "10px",
+      //         "margin-right": "10px",
+      //         "margin-bottom": "10px",
+      //         "margin-left": "10px"
+      //       }
+      //     }
+      //   ]
+      // };
 
       form.on('submit', (submission) => {
         console.log('The form was just submitted!!!');
