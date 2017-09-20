@@ -10,7 +10,31 @@
     window.onload = function () {
 
       var form = new FormioForm(document.getElementById('formio'));
-      form.src = 'https://oyofkdgmgvftkra.form.io/demo';
+      var form = new FormioForm(document.getElementById('formio'));
+      form.form = {
+        components: [
+          {
+            type: 'textfield',
+            key: 'firstName',
+            label: 'First Name',
+            placeholder: 'Enter your first name.',
+            input: true
+          },
+          {
+            type: 'textfield',
+            key: 'lastName',
+            label: 'Last Name',
+            placeholder: 'Enter your last name',
+            input: true
+          },
+          {
+            type: 'button',
+            action: 'submit',
+            label: 'Submit',
+            theme: 'primary'
+          }
+        ]
+      };
       form.on('submit', (submission) => {
         console.log('The form was just submitted!!!');
       });
