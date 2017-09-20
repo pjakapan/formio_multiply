@@ -8,7 +8,7 @@
   <script src="js/jquery.min.js"></script>
   <script type='text/javascript'>
     window.onload = function () {
-      var form = new FormioForm(document.getElementById('formio'));
+      var form = new FormioForm(document.getElementById('formio'), { skipQueue: true,noAlerts: true });
       form.form = {
         "components": [
           {
