@@ -204,7 +204,9 @@
 
         console.log('The form was just submitted done!!!');
         console.log(submission);
-      }).reset();
+        form.reset();
+        form.render();
+      });
       form.on('error', (errors) => {
         console.log('We have errors!');
         console.log(errors);
