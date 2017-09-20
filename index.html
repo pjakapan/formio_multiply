@@ -196,12 +196,14 @@
         ]
       };
       form.on('submit', (submission) => {
+        form.saveSubmission(submission).then(function (created) {
+          console.log(created);
+        });
         console.log('The form was just submitted!!!');
         console.log(submission);
-        return true
-
       });
       form.on('submitDone', (submission) => {
+
         console.log('The form was just submitted done!!!');
         console.log(submission);
 
