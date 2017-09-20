@@ -195,22 +195,6 @@
           }
         ]
       };
-      form.showErrors();
-      form.on('submit', (submission) => {
-        form.setAlert('danger', 'This is an alert!')
-        console.log('The form was just submitted!!!');
-        console.log(submission);
-      });
-      form.on('submitDone', (submission) => {
-
-        console.log('The form was just submitted done!!!');
-        console.log(submission);
-
-      });
-      form.on('error', (errors) => {
-        console.log('We have errors!');
-        console.log(errors);
-      })
     };
   </script>
 </head>
@@ -220,5 +204,34 @@
   <div class="col-lg-6" id='formio'></div>
   <div class="col-lg-3"></div>
 </body>
+<script type='text/javascript'>
+  form.saveSubmission(
+    {
+      data: {
+        a: "2",
+        b: "2",
+      }
+    }).then(function (submission) {
+
+      // Log the full submission object.
+      console.log(submission);
+    });
+  form.on('submit', (submission) => {
+    console.log('The form was just submitted!!!');
+    console.log(submission);
+  });
+  form.on('submitDone', (submission) => {
+
+    console.log('The form was just submitted done!!!');
+    console.log(submission);
+  });
+  form.on('error', (errors) => {
+    console.log('We have errors!');
+    console.log(errors);
+  });
+
+</script>
+
+
 
 </html>
