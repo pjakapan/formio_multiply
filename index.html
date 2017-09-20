@@ -38,6 +38,7 @@
       form.on('submit', (submission) => {
         console.log('The form was just submitted!!!');
         console.log(submission);
+        return true
 
       });
       form.on('submitDone', (submission) => {
