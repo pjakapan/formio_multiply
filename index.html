@@ -196,9 +196,7 @@
         ]
       };
       form.on('submit', (submission) => {
-        form.saveSubmission(submission).then(function (created) {
-          console.log(created);
-        });
+        form.setAlert('danger', 'This is an alert!')
         console.log('The form was just submitted!!!');
         console.log(submission);
       });
