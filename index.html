@@ -195,17 +195,7 @@
           }
         ]
       };
-      form.saveSubmission(
-        {
-          data: {
-            a: "2",
-            b: "2",
-          }
-        }).then(function (submission) {
 
-          // Log the full submission object.
-          console.log(submission);
-        });
       form.on('submit', (submission) => {
         console.log('The form was just submitted!!!');
         console.log(submission);
