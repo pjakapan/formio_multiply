@@ -8,7 +8,7 @@
   <script src="js/jquery.min.js"></script>
   <script type='text/javascript'>
     window.onload = function () {
-      var form = new FormioForm(document.getElementById('formio'), {noAlerts: false });
+      var form = new FormioForm(document.getElementById('formio'), { noAlerts: false });
       form.form = {
         "components": [
           {
@@ -204,8 +204,7 @@
 
         console.log('The form was just submitted done!!!');
         console.log(submission);
-        form.render();
-      });
+      }).reset();
       form.on('error', (errors) => {
         console.log('We have errors!');
         console.log(errors);
