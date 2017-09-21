@@ -1,6 +1,51 @@
 <html>
 
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/formiojs@latest/dist/formio.full.min.css">
+  <script src="https://unpkg.com/formiojs@latest/dist/formio.full.min.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      Formio.createForm(document.getElementById('formio'), {
+        components: [
+          {
+            type: 'textfield',
+            key: 'firstName',
+            label: 'First Name',
+            placeholder: 'Enter your first name.',
+            input: true
+          },
+          {
+            type: 'textfield',
+            key: 'lastName',
+            label: 'Last Name',
+            placeholder: 'Enter your last name',
+            input: true
+          },
+          {
+            type: 'button',
+            action: 'submit',
+            label: 'Submit',
+            theme: 'primary'
+          }
+        ]
+      }).then(function (form) {
+        form.on('submit', function (submission) {
+          console.log(submission);
+        });
+      });
+    };
+  </script>
+</head>
+
+<body>
+  <div id="formio"></div>
+</body>
+
+</html>
+<!-- <html>
+
+<head>
   <link rel='stylesheet' href='css/bootstrap.min.css'>
   <link rel='stylesheet' href='css/formio.form.min.css'>
   <link rel='stylesheet' href='css/app.css'>
@@ -56,4 +101,4 @@
   <div class="col-lg-3"></div>
 </body>
 
-</html>
+</html> -->
