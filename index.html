@@ -10,8 +10,6 @@
     window.onload = function () {
 
       var form = new FormioForm(document.getElementById('formio'), { noAlerts: false });
-
-      // form.src = 'https://oyofkdgmgvftkra.form.io/savefile';
       form.form = (function () {
         var json = null;
         $.ajax({
@@ -25,23 +23,28 @@
         });
         return json;
       })();
+
       form.on('submit', (submission) => {
-        console.log('The form was just submitted!!!');
-        console.log(submission);
-        form.setAlert('success', submission.data);
+        form.setAlert('success', 'The form was just submitted!!!');
         window.setTimeout(function () {
           $(".alert").fadeOut("slow");
-        }, 5000);
-      });
-      form.on('submitDone', (submission) => {
-        console.log('The form was just submitted done!!!');
+        }, 3000);
         console.log(submission);
       });
+
+      form.on('submitDone', (submission) => {
+        form.setAlert('success', 'The form was just submitted done!!!');
+        window.setTimeout(function () {
+          $(".alert").fadeOut("slow");
+        }, 3000);
+        console.log(submission);
+      });
+
       form.on('error', (errors) => {
         form.setAlert('danger', errors[0].message);
         window.setTimeout(function () {
           $(".alert").fadeOut("slow");
-        }, 5000);
+        }, 3000);
       });
     };
   </script>
