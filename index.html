@@ -20,8 +20,27 @@
         });
         return json;
       })()).then(function (form) {
-        form.on('submit', function (submission) {
+        form.on('submit', (submission) => {
+          form.setAlert('success', 'The form was just submitted!!!');
+          window.setTimeout(function () {
+            $(".alert").fadeOut("slow");
+          }, 3000);
           console.log(submission);
+        });
+
+        form.on('submitDone', (submission) => {
+          form.setAlert('success', 'The form was just submitted done!!!');
+          window.setTimeout(function () {
+            $(".alert").fadeOut("slow");
+          }, 3000);
+          console.log(submission);
+        });
+
+        form.on('error', (errors) => {
+          form.setAlert('danger', errors[0].message);
+          window.setTimeout(function () {
+            $(".alert").fadeOut("slow");
+          }, 3000);
         });
       });
     };
