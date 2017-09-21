@@ -22,10 +22,13 @@
         return json;
       })()).then(function (form) {
         form.on('submit', (submission) => {
-          var url = 'https://ja-api.azure-api.net/jacalc/mul?';
+          var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
+          url += submission.data.a;
+          url += '&b=';
+          url += submission.data.b;
           $.ajax({
             url: url,
-            type: "GET",
+            type: "POST",
             data: {
               a: 2,
               b: 2
@@ -44,7 +47,7 @@
             console.log(submission);
           }).fail(function (error) {
             form.setAlert('danger', error);
-            consle.log(error);
+            console.log(error);
           });
         });
         form.on('submitDone', (submission) => {
