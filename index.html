@@ -225,6 +225,8 @@
       });
       form.on('error', (errors) => {
         console.log('We have errors!');
+        form.setAlert('danger', 'errors.message');
+        window.setTimeout(function() { $(".alert").alert('close'); }, 2000);
         console.log(errors);
       });
     };
