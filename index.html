@@ -227,11 +227,9 @@
         console.log('We have errors!');
         form.setAlert('danger', 'errors.message');
         window.setTimeout(function () {
-          $(".alert").fadeOut("slow", function () {
-            console.log("submission");
-          });
-        }, 2000);
-        console.log(errors);
+          $(".alert").fadeOut("slow");
+        }, 5000);
+        console.log(errors[0].message);
       });
     };
   </script>
