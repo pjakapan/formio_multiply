@@ -22,14 +22,9 @@
         return json;
       })()).then(function (form) {
         form.on('submit', (submission) => {
-          var url = 'https://ja-api.azure-api.net/jacalc/mul?';
           $.ajax({
-            url: url,
+            url: 'https://ja-api.azure-api.net/jacalc/mul?',
             type: "POST",
-            data: {
-              a: 2,
-              b: 2
-            },
             dataType: "JSON"
           }).done(function (data) {
             form.submission = {
@@ -57,7 +52,12 @@
 </head>
 
 <body>
-  <div class="col-md-6 col-md-offset-3" id="formio"></div>
+  <div class="container-fuild">
+    <div class="jumpbotron">
+      <h1 style="text-align:center"> MULTIPLY FORM</h1>
+    </div>
+    <div class="col-md-6 col-md-offset-3" id="formio"></div>
+  </div>
 </body>
 
 </html>
