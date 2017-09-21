@@ -41,66 +41,7 @@
 </head>
 
 <body>
-  <div id="formio"></div>
+  <div class="col-md-6 col-md-offset-3" id="formio"></div>
 </body>
 
 </html>
-<!-- <html>
-
-<head>
-  <link rel='stylesheet' href='css/bootstrap.min.css'>
-  <link rel='stylesheet' href='css/formio.form.min.css'>
-  <link rel='stylesheet' href='css/app.css'>
-  <script src='js/formio.form.min.js'></script>
-  <script src="js/jquery.min.js"></script>
-  <script type='text/javascript'>
-    window.onload = function () {
-
-      var form = new FormioForm(document.getElementById('formio'), { noAlerts: false });
-      form.form = (function () {
-        var json = null;
-        $.ajax({
-          'async': false,
-          'global': false,
-          'url': "json/conditionalwizard.json",
-          'dataType': "json",
-          'success': function (data) {
-            json = data;
-          }
-        });
-        return json;
-      })();
-
-      // form.on('submit', (submission) => {
-      //   form.setAlert('success', 'The form was just submitted!!!');
-      //   window.setTimeout(function () {
-      //     $(".alert").fadeOut("slow");
-      //   }, 3000);
-      //   console.log(submission);
-      // });
-
-      // form.on('submitDone', (submission) => {
-      //   form.setAlert('success', 'The form was just submitted done!!!');
-      //   window.setTimeout(function () {
-      //     $(".alert").fadeOut("slow");
-      //   }, 3000);
-      //   console.log(submission);
-      // });
-
-      // form.on('error', (errors) => {
-      //   form.setAlert('danger', errors[0].message);
-      //   window.setTimeout(function () {
-      //     $(".alert").fadeOut("slow");
-      //   }, 3000);
-      // });
-    };
-  </script>
-</head>
-
-<body>
-  <div class="col-lg-3"></div>
-  <div class="col-lg-6" id='formio'></div>
-  <div class="col-lg-3"></div>
-</body>
-
-</html> -->
