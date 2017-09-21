@@ -44,7 +44,7 @@
             }, 3000);
             console.log(submission);
           }).fail(function (error) {
-            form.setAlert('danger', error);
+            form.setAlert('danger', JSON.stringify(error.statusText));
             console.log(JSON.stringify(error.statusText));
           });
         });
