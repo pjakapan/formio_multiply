@@ -28,7 +28,11 @@
           url += submission.data.b;
           $.ajax({
             url: url,
-            type: "GET"
+            type: "GET",
+            data: {
+              a: 2,
+              b: 2
+            }
           }).done(function (data) {
             form.submission = {
               data: {
