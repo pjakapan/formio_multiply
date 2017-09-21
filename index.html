@@ -217,19 +217,14 @@
         console.log(submission);
       });
       form.on('submitDone', (submission) => {
-
         console.log('The form was just submitted done!!!');
         console.log(submission);
-        form.reset();
-        form.render();
       });
       form.on('error', (errors) => {
-        console.log('We have errors!');
-        form.setAlert('danger', 'errors.message');
+        form.setAlert('danger', errors[0].message);
         window.setTimeout(function () {
           $(".alert").fadeOut("slow");
         }, 5000);
-        console.log(errors[0].message);
       });
     };
   </script>
