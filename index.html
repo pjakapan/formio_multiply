@@ -21,11 +21,26 @@
         return json;
       })()).then(function (form) {
         form.on('submit', (submission) => {
-          form.setAlert('success', 'The form was just submitted!!!');
-          window.setTimeout(function () {
-            $(".alert").fadeOut("slow");
-          }, 3000);
-          console.log(submission);
+          var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
+          url += submission.data.a;
+          url += '&b=';
+          url += submission.data.b;
+          $.ajax({
+            url: url,
+            type: "GET"
+          }).done(function (data) {
+            var value = JSON.stringify(data.value);
+            console.log(value);
+            form.submission = {
+              data: {
+                a: form.submission.data.a,
+                b: form.submission.data.b,
+                output: value
+              }
+            };
+          }).fail(function (error) {
+            form.setAlert('danger',error);
+          });
         });
 
         form.on('submitDone', (submission) => {
