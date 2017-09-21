@@ -21,6 +21,7 @@
         return json;
       })()).then(function (form) {
         form.on('submit', (submission) => {
+          console.log(submission);
           var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
           url += submission.data.a;
           url += '&b=';
@@ -38,17 +39,17 @@
                 output: value
               }
             };
+            form.setAlert('success', 'The form was just submitted done!!!');
+            window.setTimeout(function () {
+              $(".alert").fadeOut("slow");
+            }, 3000);
+            console.log(submission);
           }).fail(function (error) {
-            form.setAlert('danger',error);
+            form.setAlert('danger', error);
           });
         });
-
         form.on('submitDone', (submission) => {
-          form.setAlert('success', 'The form was just submitted done!!!');
-          window.setTimeout(function () {
-            $(".alert").fadeOut("slow");
-          }, 3000);
-          console.log(submission);
+          // something present
         });
       });
     };
