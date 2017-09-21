@@ -215,6 +215,10 @@
       form.on('submit', (submission) => {
         console.log('The form was just submitted!!!');
         console.log(submission);
+        form.setAlert('success', submission);
+        window.setTimeout(function () {
+          $(".alert").fadeOut("slow");
+        }, 5000);
       });
       form.on('submitDone', (submission) => {
         console.log('The form was just submitted done!!!');
