@@ -15,7 +15,7 @@
         $.ajax({
           'async': false,
           'global': false,
-          'url': "json/fixedform.json",
+          'url': "json/conditionalwizard.json",
           'dataType': "json",
           'success': function (data) {
             json = data;
@@ -24,28 +24,28 @@
         return json;
       })();
 
-      form.on('submit', (submission) => {
-        form.setAlert('success', 'The form was just submitted!!!');
-        window.setTimeout(function () {
-          $(".alert").fadeOut("slow");
-        }, 3000);
-        console.log(submission);
-      });
+      // form.on('submit', (submission) => {
+      //   form.setAlert('success', 'The form was just submitted!!!');
+      //   window.setTimeout(function () {
+      //     $(".alert").fadeOut("slow");
+      //   }, 3000);
+      //   console.log(submission);
+      // });
 
-      form.on('submitDone', (submission) => {
-        form.setAlert('success', 'The form was just submitted done!!!');
-        window.setTimeout(function () {
-          $(".alert").fadeOut("slow");
-        }, 3000);
-        console.log(submission);
-      });
+      // form.on('submitDone', (submission) => {
+      //   form.setAlert('success', 'The form was just submitted done!!!');
+      //   window.setTimeout(function () {
+      //     $(".alert").fadeOut("slow");
+      //   }, 3000);
+      //   console.log(submission);
+      // });
 
-      form.on('error', (errors) => {
-        form.setAlert('danger', errors[0].message);
-        window.setTimeout(function () {
-          $(".alert").fadeOut("slow");
-        }, 3000);
-      });
+      // form.on('error', (errors) => {
+      //   form.setAlert('danger', errors[0].message);
+      //   window.setTimeout(function () {
+      //     $(".alert").fadeOut("slow");
+      //   }, 3000);
+      // });
     };
   </script>
 </head>
