@@ -45,7 +45,7 @@
             console.log(submission);
           }).fail(function (error) {
             form.setAlert('danger', error);
-            console.log(error);
+            console.log(error.statusText);
           });
         });
         form.on('submitDone', (submission) => {
