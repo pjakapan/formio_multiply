@@ -215,7 +215,7 @@
       form.on('submit', (submission) => {
         console.log('The form was just submitted!!!');
         console.log(submission);
-        form.setAlert('success', submission);
+        form.setAlert('success', submission.data);
         window.setTimeout(function () {
           $(".alert").fadeOut("slow");
         }, 5000);
