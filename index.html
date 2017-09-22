@@ -22,20 +22,23 @@
         return json;
       })()).then(function (form) {
         form.on('submit', (submission) => {
-          var url = 'https://ja-api.azure-api.net/jacalc/mul?a=';
-          url += submission.data.a;
-          url += '&b=';
-          url += submission.data.b;
+          var url = 'https://ja-api.azure-api.net/jacalc/mul';
+          var data = {
+            "a": submission.data.a,
+            "b": submission.data.b
+          }
           $.ajax({
             url: url,
-            type: "GET",
+            type: "POST",
+            data: data,
             dataType: "JSON"
           }).done(function (data) {
+            console.log(data);
             form.submission = {
               data: {
-                a: form.submission.data.a,
-                b: form.submission.data.b,
-                output: JSON.stringify(data.value)
+                a: data.a,
+                b: data.b,
+                output: JSON.stringify(data.result)
               }
             };
             window.setTimeout(function () {
