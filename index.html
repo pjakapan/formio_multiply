@@ -57,6 +57,17 @@
           // something present
         });
       });
+
+      var getsettings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://togetherdemo.azure-api.net/calc/mul",
+        "method": "GET"
+      }
+
+      $.ajax(getsettings).done(function (response) {
+        console.log(response);
+      });
     };
   </script>
 </head>
