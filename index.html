@@ -30,6 +30,7 @@
           $.ajax({
             url: url,
             type: "POST",
+            contentType: "application/json",
             data: data,
             dataType: "JSON"
           }).done(function (data) {
