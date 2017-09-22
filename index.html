@@ -22,8 +22,8 @@
         return json;
       })()).then(function (form) {
         form.on('submit', (submission) => {
+
           var settings = {
-            "crossDomain": true,
             "url": "https://togetherdemo.azure-api.net/calc/mul",
             "method": "POST",
             "headers": {
