@@ -22,34 +22,47 @@
         return json;
       })()).then(function (form) {
         form.on('submit', (submission) => {
-          var url = 'https://togetherdemo.azure-api.net/calc/mul';
-          var data = {
-            "a": "2",
-            "b": "2"
+          var settings = {
+            "crossDomain": true,
+            "url": "https://togetherdemo.azure-api.net/calc/mul",
+            "method": "POST",
+            "headers": {
+              "content-type": "application/json"
+            },
+            "data": "{\n\t\"a\": " + submission.a + ",\n\t\"b\": " + submission.a + "\n}"
           }
-          $.ajax({
-            url: url,
-            type: "POST",
-            contentType: "application/json",
-            data: data,
-            dataType: "JSON"
-          }).done(function (data) {
-            console.log(data);
-            form.submission = {
-              data: {
-                a: data.inputa,
-                b: data.inputb,
-                output: JSON.stringify(data.result)
-              }
-            };
-            window.setTimeout(function () {
-              $(".alert").fadeOut("slow");
-            }, 3000);
-            console.log(submission);
-          }).fail(function (error) {
-            form.setAlert('danger', error.statusText);
-            console.log(JSON.stringify(error.statusText));
+
+          $.ajax(settings).done(function (response) {
+            console.log(response);
           });
+          //   var url = 'https://togetherdemo.azure-api.net/calc/mul';
+          //   var data = {
+          //     "a": "2",
+          //     "b": "2"
+          //   }
+          //   $.ajax({
+          //     url: url,
+          //     type: "POST",
+          //     contentType: "application/json",
+          //     data: data,
+          //     dataType: "JSON"
+          //   }).done(function (data) {
+          //     console.log(data);
+          //     form.submission = {
+          //       data: {
+          //         a: data.inputa,
+          //         b: data.inputb,
+          //         output: JSON.stringify(data.result)
+          //       }
+          //     };
+          //     window.setTimeout(function () {
+          //       $(".alert").fadeOut("slow");
+          //     }, 3000);
+          //     console.log(submission);
+          //   }).fail(function (error) {
+          //     form.setAlert('danger', error.statusText);
+          //     console.log(JSON.stringify(error.statusText));
+          //   });
         });
         form.on('submitDone', (submission) => {
           // something present
