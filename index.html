@@ -24,8 +24,8 @@
         form.on('submit', (submission) => {
           var url = 'https://togetherdemo.azure-api.net/calc/mul';
           var data = {
-            "a": submission.data.a,
-            "b": submission.data.b
+            a: submission.data.a,
+            b: submission.data.b
           }
           $.ajax({
             url: url,
