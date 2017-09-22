@@ -66,9 +66,13 @@
       }
 
       $.ajax(getsettings).done(function (response) {
+        console.log(response);
+        var html = "";
         $.each(response, function (key, value) {
+          html += "<p><strong>Success!</strong> Some text...</p>";
           console.log(key + ": " + value.ID);
         });
+        $("result").append(html);
       });
     };
   </script>
