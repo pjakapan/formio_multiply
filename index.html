@@ -22,7 +22,7 @@
         });
         return json;
       })()).then(function (form) {
-        // submit Event
+        // submit form
         form.on('submit', (submission) => {
           // setting data before call api
           var settings = {
@@ -66,12 +66,9 @@
     <div class="jumbotron">
       <h1 style="text-align:center"> MULTIPLY FORM</h1>
     </div>
-    <div class="col-lg-6">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" id="formio"></div>
-    </div>
-    <div class="col-lg-6">
-      <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" id="formio2"></div>
-    </div>
+    <div class="col-lg-4" id="result"></div>
+    <div class="col-lg-4" id="formio"></div>
+    <div class="col-lg-4" id="formio2"></div>
   </div>
 </body>
 
