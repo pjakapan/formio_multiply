@@ -22,7 +22,7 @@
         return json;
       })()).then(function (form) {
         form.on('submit', (submission) => {
-          var url = 'https://ja-api.azure-api.net/jacalc/mul';
+          var url = 'https://togetherdemo.azure-api.net/calc/mul';
           var data = {
             "a": submission.data.a,
             "b": submission.data.b
@@ -36,8 +36,8 @@
             console.log(data);
             form.submission = {
               data: {
-                a: data.a,
-                b: data.b,
+                a: data.inputa,
+                b: data.inputa,
                 output: JSON.stringify(data.result)
               }
             };
