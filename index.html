@@ -74,7 +74,6 @@
           var res_inputB = value.InputB;
           var res_result = value.Result;
           var res_datetimeStamp = moment(value.Datetimestamp).fromNow();
-          moment(testDate,'mm/dd/yyyy');
           html += "<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + " Date: " + res_datetimeStamp + "</p>";
         });
         $("#result").append(html);
