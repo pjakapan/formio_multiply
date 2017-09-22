@@ -66,7 +66,6 @@
       }
 
       $.ajax(getsettings).done(function (response) {
-        console.log(response);
         var html = "";
         $.each(response, function (key, value) {
           var res_id = JSON.stringify(value.ID);
@@ -74,8 +73,7 @@
           var res_inputB = JSON.stringify(value.inputB);
           var res_result = JSON.stringify(value.result);
           var res_datetimeStamp = JSON.stringify(value.Datetimestamp);
-          console.log(result);
-          html += "<p class='info'><strong>ID: "+ result +"</strong> ("+ value.inputA +" x "+ value.inputB +") = "+ value.result +" Date: "+ value.Satetimestamp +"</p>";
+          html += "<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + " Date: " + res_datetimeStamp + "</p>";
         });
         $("#result").append(html);
       });
