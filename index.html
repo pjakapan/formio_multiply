@@ -52,7 +52,7 @@
           var res_inputA = JSON.stringify(response.InputA);
           var res_inputB = JSON.stringify(response.InputB);
           var res_result = JSON.stringify(response.Result);
-          var res_datetimeStamp = moment(response.Datetimestamp,'yyyy-dd-mm');
+          var res_datetimeStamp = response.Datetimestamp;
             $("#result").prepend("<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span></p>");
           }).fail(function (error) {
             form.setAlert('danger', error.statusText);
@@ -79,7 +79,7 @@
           var res_inputA = value.InputA;
           var res_inputB = value.InputB;
           var res_result = value.Result;
-          var res_datetimeStamp = moment(response.Datetimestamp,'yyyy-dd-mm');
+          var res_datetimeStamp = response.Datetimestamp;
           html += "<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span></p>";
         });
         $("#result").append(html);
