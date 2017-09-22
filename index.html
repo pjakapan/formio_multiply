@@ -34,12 +34,12 @@
           }
 
           $.ajax(settings).done(function (response) {
-            console.log(data);
+            console.log(response);
             form.submission = {
               data: {
-                a: data.inputa,
-                b: data.inputb,
-                output: JSON.stringify(data.result)
+                a: response.inputa,
+                b: response.inputb,
+                output: JSON.stringify(response.result)
               }
             };
             window.setTimeout(function () {
