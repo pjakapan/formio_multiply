@@ -45,7 +45,6 @@
             window.setTimeout(function () {
               $(".alert").fadeOut("slow");
             }, 3000);
-            console.log(submission);
           }).fail(function (error) {
             form.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
