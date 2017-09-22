@@ -73,7 +73,7 @@
           var res_inputB = JSON.stringify(value.InputB);
           var res_result = JSON.stringify(value.Result);
           var res_datetimeStamp = JSON.stringify(value.Datetimestamp);
-          // html += "<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + " Date: " + res_datetimeStamp + "</p>";
+          html += "<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + " Date: " + res_datetimeStamp + "</p>";
         });
         $("#result").append(html);
       });
@@ -84,7 +84,7 @@
 <body>
   <div class="container-fuild">
     <div class="jumbotron">
-      <h1 style="text-align:center"> MULTIPLY FORM</h1>
+      <h1 style="text-align:center">MULTIPLY FORM</h1>
     </div>
     <div class="col-lg-4" id="result"></div>
     <div class="col-lg-4" id="formio"></div>
