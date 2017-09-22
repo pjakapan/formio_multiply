@@ -34,36 +34,22 @@
           }
 
           $.ajax(settings).done(function (response) {
-            console.log(response);
+            console.log(data);
+            form.submission = {
+              data: {
+                a: data.inputa,
+                b: data.inputb,
+                output: JSON.stringify(data.result)
+              }
+            };
+            window.setTimeout(function () {
+              $(".alert").fadeOut("slow");
+            }, 3000);
+            console.log(submission);
+          }).fail(function (error) {
+            form.setAlert('danger', error.statusText);
+            console.log(JSON.stringify(error.statusText));
           });
-          //   var url = 'https://togetherdemo.azure-api.net/calc/mul';
-          //   var data = {
-          //     "a": "2",
-          //     "b": "2"
-          //   }
-          //   $.ajax({
-          //     url: url,
-          //     type: "POST",
-          //     contentType: "application/json",
-          //     data: data,
-          //     dataType: "JSON"
-          //   }).done(function (data) {
-          //     console.log(data);
-          //     form.submission = {
-          //       data: {
-          //         a: data.inputa,
-          //         b: data.inputb,
-          //         output: JSON.stringify(data.result)
-          //       }
-          //     };
-          //     window.setTimeout(function () {
-          //       $(".alert").fadeOut("slow");
-          //     }, 3000);
-          //     console.log(submission);
-          //   }).fail(function (error) {
-          //     form.setAlert('danger', error.statusText);
-          //     console.log(JSON.stringify(error.statusText));
-          //   });
         });
         form.on('submitDone', (submission) => {
           // something present
