@@ -69,7 +69,7 @@
         console.log(response);
         var html = "";
         $.each(response, function (key, value) {
-          html += "<p class='info'><strong>ID: "+ value.ID +"</strong> ("+ value.inputA +" x "+ value.inputB +" = "+ value.result +" Date: "+ value.Satetimestamp +"</p>";
+          html += "<p class='info'><strong>ID: "+ JSON.stringify(value.ID) +"</strong> ("+ value.inputA +" x "+ value.inputB +") = "+ value.result +" Date: "+ value.Satetimestamp +"</p>";
           console.log(key + ": " + value.ID);
         });
         $("#result").append(html);
@@ -83,19 +83,7 @@
     <div class="jumbotron">
       <h1 style="text-align:center"> MULTIPLY FORM</h1>
     </div>
-    <div class="col-lg-4" id="result">
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-      <p class='info'><strong>Success!</strong> Some text...</p>
-    </div>
+    <div class="col-lg-4" id="result"></div>
     <div class="col-lg-4" id="formio"></div>
     <div class="col-lg-4" id="formio2"></div>
   </div>
