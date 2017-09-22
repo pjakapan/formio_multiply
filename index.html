@@ -72,7 +72,7 @@
           var result = JSON.stringify(value);
           console.log(result);
           // html += "<p class='info'><strong>ID: "+ JSON.stringify(value.ID) +"</strong> ("+ value.inputA +" x "+ value.inputB +") = "+ value.result +" Date: "+ value.Satetimestamp +"</p>";
-          console.log(key + ": " + value.ID);
+          console.log(key + ": " + result.ID);
         });
         $("#result").append(html);
       });
