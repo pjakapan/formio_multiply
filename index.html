@@ -71,7 +71,7 @@
         $.each(response, function (key, value) {
           var result = JSON.stringify(value.ID);
           console.log(result);
-          // html += "<p class='info'><strong>ID: "+ JSON.stringify(value.ID) +"</strong> ("+ value.inputA +" x "+ value.inputB +") = "+ value.result +" Date: "+ value.Satetimestamp +"</p>";
+          html += "<p class='info'><strong>ID: "+ result +"</strong> ("+ value.inputA +" x "+ value.inputB +") = "+ value.result +" Date: "+ value.Satetimestamp +"</p>";
         });
         $("#result").append(html);
       });
