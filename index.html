@@ -69,11 +69,11 @@
         var html = "";
         $.each(response, function (key, value) {
           var res_id = JSON.stringify(value.ID);
-          var res_inputA = JSON.stringify(value.inputA);
-          var res_inputB = JSON.stringify(value.inputB);
-          var res_result = JSON.stringify(value.result);
+          var res_inputA = JSON.stringify(value.InputA);
+          var res_inputB = JSON.stringify(value.InputB);
+          var res_result = JSON.stringify(value.Result);
           var res_datetimeStamp = JSON.stringify(value.Datetimestamp);
-          html += "<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + " Date: " + res_datetimeStamp + "</p>";
+          // html += "<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + " Date: " + res_datetimeStamp + "</p>";
         });
         $("#result").append(html);
       });
