@@ -24,12 +24,13 @@
         form.on('submit', (submission) => {
 
           var settings = {
+            "crossDomain": true,
             "url": "https://togetherdemo.azure-api.net/calc/mul",
             "method": "POST",
             "headers": {
               "content-type": "application/json"
             },
-            "data": "{\n\t\"a\": " + submission.a + ",\n\t\"b\": " + submission.a + "\n}"
+            "data": "{\n\t\"a\": " + submission.data.a + ",\n\t\"b\": " + submission.data.a + "\n}"
           }
 
           $.ajax(settings).done(function (response) {
