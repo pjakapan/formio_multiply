@@ -67,7 +67,7 @@
 
       $.ajax(getsettings).done(function (response) {
         $.each(response, function (key, value) {
-          console.log(key + ": " + value._id);
+          console.log(key + ": " + value.ID);
         });
       });
     };
