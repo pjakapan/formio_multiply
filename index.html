@@ -69,10 +69,9 @@
         console.log(response);
         var html = "";
         $.each(response, function (key, value) {
-          var result = JSON.stringify(value);
+          var result = JSON.stringify(value.ID);
           console.log(result);
           // html += "<p class='info'><strong>ID: "+ JSON.stringify(value.ID) +"</strong> ("+ value.inputA +" x "+ value.inputB +") = "+ value.result +" Date: "+ value.Satetimestamp +"</p>";
-          console.log(key + ": " + result.ID);
         });
         $("#result").append(html);
       });
