@@ -8,6 +8,6 @@
     border-left: 6px solid #2196F3;
 }
 #result {
-    height: 600px;
-    overflow: scroll;
+    height: 700px;
+    overflow-y: scroll;
 }
