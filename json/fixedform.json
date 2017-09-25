@@ -87,40 +87,6 @@
                 "show": ""
             },
             "tags": [],
-            "type": "number",
-            "validate": {
-                "custom": "",
-                "multiple": "",
-                "integer": "",
-                "step": "any",
-                "max": "",
-                "min": "",
-                "required": false
-            },
-            "clearOnHide": true,
-            "hidden": false,
-            "persistent": true,
-            "protected": false,
-            "defaultValue": "",
-            "suffix": "",
-            "prefix": "",
-            "placeholder": "",
-            "key": "output",
-            "label": "output",
-            "inputType": "number",
-            "tableView": true,
-            "input": true
-        },
-        {
-            "properties": {
-                "": ""
-            },
-            "conditional": {
-                "eq": "",
-                "when": null,
-                "show": ""
-            },
-            "tags": [],
             "type": "button",
             "theme": "primary",
             "disableOnInvalid": true,
