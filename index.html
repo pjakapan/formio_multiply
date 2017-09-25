@@ -40,8 +40,9 @@
       })();
 
       Formio.createForm(document.getElementById('formio'), form).then(function (instance) {
+
         instance.on('submit', (submission) => {
-          instance.render();
+          
           var settings = {
             "crossDomain": true,
             "url": "https://togetherdemo.azure-api.net/calc/mul",
@@ -68,6 +69,7 @@
             console.log(JSON.stringify(error.statusText));
           });
         });
+
         instance.reset((reset) => {
           console.log(reset);
 
