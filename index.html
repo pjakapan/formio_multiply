@@ -64,6 +64,9 @@
             console.log(JSON.stringify(error.statusText));
           });
         });
+        form.on('submitDone', () =>{
+          form.reset()
+        });
       });
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load form.io with json : end
