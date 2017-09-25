@@ -7,24 +7,25 @@
   <script src="js/formio.full.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/moment.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container-fuild">
+    <div class="jumbotron">
+      <h1 style="text-align:center">MULTIPLY FORM</h1>
+    </div>
+    <div class="col-lg-4" id="result"></div>
+    <div class="col-lg-4" id="formio"></div>
+    <div class="col-lg-4" id="formio2"></div>
+  </div>
+
   <script type="text/javascript">
     window.onload = function () {
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load form.io with json : start
       // -----------------------------------------------------------------------------------------------------------------------------
-      Formio.createForm(document.getElementById('formio'), (function () {
-        var json = null;
-        $.ajax({
-          'async': false,
-          'global': false,
-          'url': "json/fixedform.json",
-          'dataType': "json",
-          'success': function (data) {
-            json = data;
-          }
-        });
-        return json;
-      })()).then(function (form) {
+      Formio.createForm(document.getElementById('formio'), fromLoad("fixedform")).then(function (form) {
         form.on('submit', (submission) => {
           var settings = {
             "crossDomain": true,
@@ -94,18 +95,19 @@
       // Load data form azure : start
       // -----------------------------------------------------------------------------------------------------------------------------
     };
+    function fromLoad(jsonFileName) {
+      var jsonData = null;
+      $.ajax({
+        dataType: "json",
+        'url': "json/" + jjsonFileNameson + ".json",
+        data: data,
+        'success': function (data) {
+          jsonData = data;
+        }
+      });
+      return jsonData;
+    }
   </script>
-</head>
-
-<body>
-  <div class="container-fuild">
-    <div class="jumbotron">
-      <h1 style="text-align:center">MULTIPLY FORM</h1>
-    </div>
-    <div class="col-lg-4" id="result"></div>
-    <div class="col-lg-4" id="formio"></div>
-    <div class="col-lg-4" id="formio2"></div>
-  </div>
 </body>
 
 </html>
