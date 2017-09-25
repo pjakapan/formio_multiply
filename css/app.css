@@ -9,6 +9,6 @@
 }
 #result {
     height: 700px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
