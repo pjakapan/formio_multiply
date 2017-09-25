@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
   <div class="container-fuild">
     <div class="jumbotron">
       <h1 style="text-align:center">MULTIPLY FORM</h1>
@@ -25,7 +24,19 @@
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load form.io with json : start
       // -----------------------------------------------------------------------------------------------------------------------------
-      Formio.createForm(document.getElementById('formio'), fromLoad("fixedform")).then(function (form) {
+      Formio.createForm(document.getElementById('formio'), function () {
+        var json = null;
+        $.ajax({
+          'async': false,
+          'global': false,
+          'url': "json/fixedform.json",
+          'dataType': "json",
+          'success': function (data) {
+            json = data;
+          }
+        });
+        return json;
+      }).then(function (form) {
         form.on('submit', (submission) => {
           var settings = {
             "crossDomain": true,
@@ -95,18 +106,6 @@
       // Load data form azure : start
       // -----------------------------------------------------------------------------------------------------------------------------
     };
-    function fromLoad(jsonFileName) {
-      var jsonData = null;
-      $.ajax({
-        dataType: "json",
-        'url': "json/" + jjsonFileNameson + ".json",
-        data: data,
-        'success': function (data) {
-          jsonData = data;
-        }
-      });
-      return jsonData;
-    }
   </script>
 </body>
 
