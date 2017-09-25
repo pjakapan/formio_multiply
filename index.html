@@ -37,13 +37,6 @@
           }
           $.ajax(settings).done(function (response) {
             console.log(response);
-            form.submission = {
-              data: {
-                a: response.InputA,
-                b: response.InputB,
-                output: JSON.stringify(response.Result)
-              }
-            };
             window.setTimeout(function () {
               $(".alert").fadeOut("slow");
             }, 3000);
@@ -63,10 +56,6 @@
             form.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
           });
-        });
-        form.on('submitDone', () =>{
-          console.log('done!');
-          form.reset()
         });
       });
       // -----------------------------------------------------------------------------------------------------------------------------
