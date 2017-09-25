@@ -60,11 +60,11 @@
             var res_html = "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
 
             $("#result").prepend(res_html);
-            form.setAlert('success', 'inserted to datacase successfully.');
+            instance.setAlert('success', 'inserted to datacase successfully.');
             window.setTimeout(function () { $(".alert").fadeOut("slow"); }, 2000);
     
           }).fail(function (error) {
-            form.setAlert('danger', error.statusText);
+            instance.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
           });
         });
