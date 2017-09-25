@@ -62,11 +62,15 @@
             $("#result").prepend(res_html);
             instance.setAlert('success', 'inserted to datacase successfully.');
             window.setTimeout(function () { $(".alert").fadeOut("slow"); }, 2000);
-    
+
           }).fail(function (error) {
             instance.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
           });
+        });
+        instance.reset((reset) => {
+          console.log(reset);
+
         });
       });
 
