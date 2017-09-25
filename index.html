@@ -25,13 +25,12 @@
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load form.io with json : start
       // -----------------------------------------------------------------------------------------------------------------------------
-
       var form = (function () {
         var json = null;
         $.ajax({
           'async': false,
           'global': false,
-          'url': "json/calculation.json",
+          'url': "json/fixedform.json",
           'dataType': "json",
           'success': function (data) {
             json = data;
