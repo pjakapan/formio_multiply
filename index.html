@@ -24,7 +24,7 @@
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load form.io with json : start
       // -----------------------------------------------------------------------------------------------------------------------------
-      Formio.createForm(document.getElementById('formio'), function () {
+      Formio.createForm(document.getElementById('formio'), (function () {
         var json = null;
         $.ajax({
           'async': false,
