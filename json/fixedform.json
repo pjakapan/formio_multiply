@@ -156,7 +156,7 @@
             "properties": {
                 "": ""
             },
-            "custom": "form.reset()"
+            "custom": "form.reset(); \n form.render();"
         }
     ],
     "owner": "59b0f3b82f12080007486f7a",
