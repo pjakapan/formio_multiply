@@ -9,7 +9,9 @@
   <script src="js/moment.min.js"></script>
   <script type="text/javascript">
     window.onload = function () {
-      // Creating from json schema file.
+      // -----------------------------------------------------------------------------------------------------------------------------
+      // Load form.io with json : start
+      // -----------------------------------------------------------------------------------------------------------------------------
       Formio.createForm(document.getElementById('formio'), (function () {
         var json = null;
         $.ajax({
@@ -23,9 +25,7 @@
         });
         return json;
       })()).then(function (form) {
-        // submit form
         form.on('submit', (submission) => {
-          // setting data before call api
           var settings = {
             "crossDomain": true,
             "url": "https://togetherdemo.azure-api.net/calc/mul",
@@ -35,7 +35,6 @@
             },
             "data": "{\n\t\"a\": " + submission.data.a + ",\n\t\"b\": " + submission.data.a + "\n}"
           }
-          // ajax call api
           $.ajax(settings).done(function (response) {
             console.log(response);
             form.submission = {
@@ -48,30 +47,35 @@
             window.setTimeout(function () {
               $(".alert").fadeOut("slow");
             }, 3000);
-          var res_id = JSON.stringify(response.ID);
-          var res_inputA = JSON.stringify(response.InputA);
-          var res_inputB = JSON.stringify(response.InputB);
-          var res_result = JSON.stringify(response.Result);
-          var res_datetimeStamp = response.Datetimestamp;
+            var res_id = JSON.stringify(response.ID);
+            var res_inputA = JSON.stringify(response.InputA);
+            var res_inputB = JSON.stringify(response.InputB);
+            var res_result = JSON.stringify(response.Result);
+            var res_datetimeStamp = response.Datetimestamp;
             $("#result").prepend("<p class='info'><strong>ID: " + res_id + "</strong> (" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span></p>");
           }).fail(function (error) {
             form.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
           });
         });
-        // submitDone Event
         form.on('submitDone', (submission) => {
           // something present
         });
       });
+      // -----------------------------------------------------------------------------------------------------------------------------
+      // Load form.io with json : end
+      // -----------------------------------------------------------------------------------------------------------------------------
 
+
+      // -----------------------------------------------------------------------------------------------------------------------------
+      // Load data form azure : start
+      // -----------------------------------------------------------------------------------------------------------------------------
       var getsettings = {
         "async": true,
         "crossDomain": true,
         "url": "https://togetherdemo.azure-api.net/calc/mul",
         "method": "GET"
       }
-
       $.ajax(getsettings).done(function (response) {
         var html = "";
         $.each(response, function (key, value) {
@@ -84,6 +88,9 @@
         });
         $("#result").append(html);
       });
+      // -----------------------------------------------------------------------------------------------------------------------------
+      // Load data form azure : start
+      // -----------------------------------------------------------------------------------------------------------------------------
     };
   </script>
 </head>
