@@ -42,6 +42,10 @@
       Formio.createForm(document.getElementById('formio'), form).then(function (instance) {
         console.log(instance);
 
+        // -----------------------------------------------
+        // Trigger on submit event.
+        // -----------------------------------------------
+
         instance.on('submit', (submission) => {
 
           var settings = {
@@ -52,7 +56,14 @@
             "data": "{\n\t\"a\": " + submission.data.a + ",\n\t\"b\": " + submission.data.b + "\n}"
           }
 
+          // -----------------------------------------------
+          // bind Result.
+          // -----------------------------------------------
+
           $.ajax(settings).done(function (response) {
+
+            instance.setAlert('success', 'inserted to datacase successfully.');
+            window.setTimeout(function () { $(".alert").fadeOut("slow"); }, 2000);
 
             var res_id = JSON.stringify(response.ID);
             var res_inputA = JSON.stringify(response.InputA);
@@ -60,20 +71,12 @@
             var res_result = JSON.stringify(response.Result);
             var res_datetimeStamp = response.Datetimestamp;
             var res_html = "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
-
             $("#result").prepend(res_html);
-            instance.setAlert('success', 'inserted to datacase successfully.');
-            window.setTimeout(function () { $(".alert").fadeOut("slow"); }, 2000);
-
+            
           }).fail(function (error) {
             instance.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
           });
-        });
-
-        instance.reset((reset) => {
-          console.log(reset);
-
         });
       });
 
@@ -96,6 +99,10 @@
         var res_inputB = "";
         var res_result = "";
         var res_datetimeStamp = "";
+
+        // -----------------------------------------------
+        // bind Results.
+        // -----------------------------------------------
 
         $.each(response, function (key, value) {
           res_id = JSON.stringify(value.ID);
