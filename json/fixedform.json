@@ -156,7 +156,6 @@
             "properties": {
                 "": ""
             },
-            //"custom": "form.submission = {\n  data: {\n    a: \"\",\n    b: \"\",\n    output: \"\"\n  }\n};"
             "custom": "form.reset()"
         }
     ],
