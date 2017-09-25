@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <div class="container-fuild">
     <div class="jumbotron">
       <h1 style="text-align:center">MULTIPLY FORM</h1>
@@ -24,87 +25,82 @@
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load form.io with json : start
       // -----------------------------------------------------------------------------------------------------------------------------
-      Formio.createForm(document.getElementById('formio'), (function () {
+
+      var form = (function () {
         var json = null;
         $.ajax({
           'async': false,
           'global': false,
-          'url': "json/fixedform.json",
+          'url': "json/calculation.json",
           'dataType': "json",
           'success': function (data) {
             json = data;
           }
         });
         return json;
-      }()).then(function (form) {
-        form.on('submit', (submission) => {
+      })();
+
+      Formio.createForm(document.getElementById('formio'), form).then(function (instance) {
+        instance.on('submit', (submission) => {
+
           var settings = {
             "crossDomain": true,
             "url": "https://togetherdemo.azure-api.net/calc/mul",
             "method": "POST",
-            "headers": {
-              "content-type": "application/json"
-            },
+            "headers": { "content-type": "application/json" },
             "data": "{\n\t\"a\": " + submission.data.a + ",\n\t\"b\": " + submission.data.a + "\n}"
           }
+
           $.ajax(settings).done(function (response) {
-            console.log(response);
-            window.setTimeout(function () {
-              $(".alert").fadeOut("slow");
-            }, 3000);
+
             var res_id = JSON.stringify(response.ID);
             var res_inputA = JSON.stringify(response.InputA);
             var res_inputB = JSON.stringify(response.InputB);
             var res_result = JSON.stringify(response.Result);
             var res_datetimeStamp = response.Datetimestamp;
-            var res_html =
-              "<p class='info'>" +
-              "<strong>ID: " + res_id + "</strong> " +
-              "(" + res_inputA + " x " + res_inputB + ") = " + res_result +
-              "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" +
-              "</p>";
+            var res_html = "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
+
             $("#result").prepend(res_html);
-            form.render();
+            instance.render();
+            window.setTimeout(function () { $(".alert").fadeOut("slow"); }, 2000);
           }).fail(function (error) {
             form.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
           });
         });
       });
-      // -----------------------------------------------------------------------------------------------------------------------------
-      // Load form.io with json : end
-      // -----------------------------------------------------------------------------------------------------------------------------
-
 
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load data form azure : start
       // -----------------------------------------------------------------------------------------------------------------------------
+
       var getsettings = {
         "async": true,
         "crossDomain": true,
         "url": "https://togetherdemo.azure-api.net/calc/mul",
         "method": "GET"
       }
+
       $.ajax(getsettings).done(function (response) {
+
         var res_html = "";
+        var res_id = "";
+        var res_inputA = "";
+        var res_inputB = "";
+        var res_result = "";
+        var res_datetimeStamp = "";
+
         $.each(response, function (key, value) {
-          var res_id = JSON.stringify(value.ID);
-          var res_inputA = value.InputA;
-          var res_inputB = value.InputB;
-          var res_result = value.Result;
-          var res_datetimeStamp = value.Datetimestamp;
-          res_html +=
-            "<p class='info'>" +
-            "<strong>ID: " + res_id + "</strong> " +
-            "(" + res_inputA + " x " + res_inputB + ") = " + res_result +
-            "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" +
-            "</p>";
+          res_id = JSON.stringify(value.ID);
+          res_inputA = value.InputA;
+          res_inputB = value.InputB;
+          res_result = value.Result;
+          res_datetimeStamp = value.Datetimestamp;
+          res_html += "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
         });
+
         $("#result").append(res_html);
       });
-      // -----------------------------------------------------------------------------------------------------------------------------
-      // Load data form azure : start
-      // -----------------------------------------------------------------------------------------------------------------------------
     };
   </script>
 </body>
