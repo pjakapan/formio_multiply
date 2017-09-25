@@ -52,6 +52,7 @@
               "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" +
               "</p>";
             $("#result").prepend(res_html);
+            form.reset();
           }).fail(function (error) {
             form.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
