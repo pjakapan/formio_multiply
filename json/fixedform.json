@@ -156,7 +156,7 @@
             "properties": {
                 "": ""
             },
-            "custom": "instance.submission = {\n  data: {\n    a: null,\n    b: null,\n    output: null\n  }\n};"
+            "custom": "form.submission = {\n  data: {\n    a: null,\n    b: null,\n    output: null\n  }\n};"
         }
     ],
     "owner": "59b0f3b82f12080007486f7a",
