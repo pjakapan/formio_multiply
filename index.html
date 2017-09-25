@@ -41,7 +41,7 @@
 
       Formio.createForm(document.getElementById('formio'), form).then(function (instance) {
         instance.on('submit', (submission) => {
-
+          instance.render();
           var settings = {
             "crossDomain": true,
             "url": "https://togetherdemo.azure-api.net/calc/mul",
@@ -60,7 +60,7 @@
             var res_html = "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
 
             $("#result").prepend(res_html);
-            instance.render();
+
             window.setTimeout(function () { $(".alert").fadeOut("slow"); }, 2000);
           }).fail(function (error) {
             form.setAlert('danger', error.statusText);
