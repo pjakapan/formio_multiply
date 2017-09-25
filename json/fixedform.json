@@ -156,7 +156,8 @@
             "properties": {
                 "": ""
             },
-            "custom": "form.submission = {\n  data: {\n    a: \"\",\n    b: \"\",\n    output: \"\"\n  }\n};"
+            //"custom": "form.submission = {\n  data: {\n    a: \"\",\n    b: \"\",\n    output: \"\"\n  }\n};"
+            "custom": "form.reset()"
         }
     ],
     "owner": "59b0f3b82f12080007486f7a",
