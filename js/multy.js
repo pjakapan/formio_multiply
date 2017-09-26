@@ -1,7 +1,7 @@
 
 
 function getMul() {
-
+    var res_html = "ss";
     var getsettings = {
         "async": true,
         "crossDomain": true,
@@ -9,8 +9,7 @@ function getMul() {
         "method": "GET"
     }
     $.ajax(getsettings).done(function (response) {
-
-        var res_html = "";
+        res_html = "";
         var res_id = "";
         var res_inputA = "";
         var res_inputB = "";
@@ -26,5 +25,5 @@ function getMul() {
             res_html += "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
         });
     });
-    return "res_html";
+    return res_html;
 }
