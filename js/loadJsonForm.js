@@ -10,6 +10,7 @@ var myForm =
         { "name": "fixedform.3" },
         { "name": "fixedform.4" },
         { "name": "fixedform.5" },
+        { "name": "fixedform.6" },
     ];
 
 jQuery.each(myForm, function (i, val) {
