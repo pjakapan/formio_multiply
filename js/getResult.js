@@ -23,6 +23,6 @@ function getMuls() {
         });
     });
 
-    return res_html;
+    return res_html
 
 }
