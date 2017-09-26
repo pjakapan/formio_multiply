@@ -18,9 +18,8 @@ function getMuls(mul) {
     return res_html;
 }
 
-
 function callAPI(mul) {
-    var response = "";
+    var responses = "";
     var getsettings = {
         "async": true,
         "crossDomain": true,
@@ -28,8 +27,9 @@ function callAPI(mul) {
         "method": "GET"
     }
     $.ajax(getsettings).done(function (response) {
-        response = response;
+        responses = response;
     });
-    return response;
+    console.log(responses);
+    return responses;
 }
 
