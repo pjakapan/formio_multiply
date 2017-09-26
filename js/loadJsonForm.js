@@ -11,14 +11,11 @@ var myForm =
         { "name": "fixedform.4" },
         { "name": "fixedform.5" },
     ];
-console.log(myForm);
 
 jQuery.each(myForm, function (i, val) {
     var form = loadForm(val.name);
     arrForm.push(form);
 });
-
-console.log(arrForm);
 
 function loadForm(JsonFileName) {
     var json = null;

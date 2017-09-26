@@ -113,7 +113,7 @@
             "properties": {
                 "": ""
             },
-            "custom": "form.render();"
+            "custom": "form.reset(); form.render();"
         }
     ]
 }

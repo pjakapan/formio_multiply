@@ -28,7 +28,7 @@
     window.onload = function () {
 
       // -----------------------------------------------------------------------------------------------------------------------------
-      // Load form.io with json : start
+      // Load form.io with json : start : multiform
       // -----------------------------------------------------------------------------------------------------------------------------
 
       Formio.createForm(document.getElementById('formio'), arrForm[0]).then(function (instance) {
@@ -72,14 +72,13 @@
           });
         });
       });
-
       Formio.createForm(document.getElementById('formio2'), arrForm[1]);
       Formio.createForm(document.getElementById('formio3'), arrForm[2]);
       Formio.createForm(document.getElementById('formio4'), arrForm[3]);
       Formio.createForm(document.getElementById('formio5'), arrForm[4]);
 
       // -----------------------------------------------------------------------------------------------------------------------------
-      // Load data form azure : start
+      // Load data form azure : start (API)
       // -----------------------------------------------------------------------------------------------------------------------------
 
       var getsettings = {
@@ -99,7 +98,7 @@
         var res_datetimeStamp = "";
 
         // -----------------------------------------------
-        // bind Results.
+        // bind Results to inner.html
         // -----------------------------------------------
 
         $.each(response, function (key, value) {
