@@ -14,7 +14,7 @@ var myForm =
 console.log(myForm);
 
 jQuery.each(myForm, function (i, val) {
-    var form = loadForm(val);
+    var form = loadForm(val.name);
     arrForm.push(form);
 });
 
