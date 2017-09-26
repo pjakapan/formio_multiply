@@ -20,14 +20,15 @@ jQuery.each(myForm, function (i, val) {
 
 function loadForm(JsonFileName) {
     var json = null;
-    $.ajax({
+    var getsetting = {
         'async': false,
         'global': false,
         'url': "json/" + JsonFileName + ".json",
         'dataType': "json",
-        'success': function (data) {
-            json = data;
-        }
+        "method": "GET"
+    }
+    $.ajax(getsetting).done(function (data) {
+        json = data;
     });
     return json;
 }

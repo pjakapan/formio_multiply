@@ -33,7 +33,6 @@
       // -----------------------------------------------------------------------------------------------------------------------------
 
       Formio.createForm(document.getElementById('formio'), arrForm[0]).then(function (instance) {
-        console.log(instance);
 
         // -----------------------------------------------
         // Trigger on submit event.
@@ -68,8 +67,8 @@
 
 
           }).fail(function (error) {
-            instance.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));
+            instance.setAlert('danger', error.statusText);
           });
         });
       });
