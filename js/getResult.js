@@ -19,7 +19,7 @@ function getMuls(mul) {
 }
 
 function callAPI(mul) {
-    var responses = "";
+    var responses = null;
     var getsettings = {
         "async": true,
         "crossDomain": true,
