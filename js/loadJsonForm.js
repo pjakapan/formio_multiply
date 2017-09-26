@@ -2,14 +2,23 @@
 // -----------------------------------------------------------------------------------------------------------------------------
 // Load form.io functions : start
 // -----------------------------------------------------------------------------------------------------------------------------
-
-myForm =
+var arrForm = [];
+var myForm =
     [
-        { "name": "John", "age": 30, "car": null },
-        { "name": "John", "age": 32, "car": null },
-        { "name": "John", "age": 33, "car": null }
+        { "name": "fixedform.1" },
+        { "name": "fixedform.2" },
+        { "name": "fixedform.3" },
+        { "name": "fixedform.4" },
+        { "name": "fixedform.5" },
     ];
 console.log(myForm);
+
+jQuery.each(myForm, function (i, val) {
+    var form = loadForm(val);
+    arrForm.push(form);
+});
+
+console.log(arrForm);
 
 function loadForm(JsonFileName) {
     var json = null;
