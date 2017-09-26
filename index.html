@@ -22,14 +22,13 @@
   </div>
 
   <script type="text/javascript">
-    
     window.onload = function () {
-      
+
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load form.io with json : start
       // -----------------------------------------------------------------------------------------------------------------------------
-     
-      var form = loadForm("fixedform");
+
+      var form = arrForm[0];
       Formio.createForm(document.getElementById('formio'), form).then(function (instance) {
         console.log(instance);
 
