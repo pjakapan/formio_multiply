@@ -30,7 +30,7 @@
     window.onload = function () {
 
       // ---------------------------------------------------------------------------------------
-      // Load form.io with json :                                                loadJsonForm.js
+      // Load form.io with json                                                  loadJsonForm.js
       // ---------------------------------------------------------------------------------------
 
       Formio.createForm(document.getElementById('formio'), arrForm[0]).then(function (instance) {
@@ -119,10 +119,9 @@
       Formio.createForm(document.getElementById('formio6'), arrForm[5]);
 
       // ---------------------------------------------------------------------------------------
-      // Load Multiply data :                                                       getResult.js
+      // Load Multiply data                                                         getResult.js
       // ---------------------------------------------------------------------------------------
-      var x = getMuls();
-      console.log(x);
+
       $("#result").append(getMuls());
     };
   </script>
