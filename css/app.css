@@ -8,6 +8,13 @@
     border: 1px solid #0C80DA;
     border-radius: 4px;
 }
+.error {
+    margin-bottom: 4px;
+    padding: 12px 12px;
+    background-color:pink;
+    border: 1px solid salmon;
+    border-radius: 4px;
+}
 #result {
     height: auto;
     overflow-y: auto;

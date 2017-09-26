@@ -29,9 +29,6 @@
   <script type="text/javascript">
     window.onload = function () {
 
-      var a = getMul();
-      console.log(a);
-
       // ----------------------------------------------------------------------------------------
       // Load data form azure : start (API)
       // ----------------------------------------------------------------------------------------
@@ -43,7 +40,7 @@
         "method": "GET"
       }
 
-      $.ajax(getsettings).done(function (response) {
+      $.ajax(getsettings).done((response) => {
 
         var res_html = "";
         var res_id = "";
@@ -52,16 +49,18 @@
         var res_result = "";
         var res_datetimeStamp = "";
 
-        $.each(response, function (key, value) {
+        $.each(response, (key, value) => {
           res_id = JSON.stringify(value.ID);
           res_inputA = value.InputA;
           res_inputB = value.InputB;
           res_result = value.Result;
           res_datetimeStamp = value.Datetimestamp;
-          res_html += "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
+          res_html += "<p class='error'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
         });
 
         $("#result").append(res_html);
+      }).fail((error) => {
+        $("#result").append("");
       });
 
       // ----------------------------------------------------------------------------------------
