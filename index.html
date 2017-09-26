@@ -72,7 +72,7 @@
             var res_datetimeStamp = response.Datetimestamp;
             var res_html = "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
             $("#result").prepend(res_html);
-            
+
           }).fail(function (error) {
             instance.setAlert('danger', error.statusText);
             console.log(JSON.stringify(error.statusText));

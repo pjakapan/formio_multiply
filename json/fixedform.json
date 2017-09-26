@@ -1,13 +1,4 @@
 {
-    "_id": "59c31f02bcff000007494cbe",
-    "machineName": "oyofkdgmgvftkra:fixedForm",
-    "modified": "2017-09-25T06:59:25.273Z",
-    "title": "fixedForm",
-    "display": "form",
-    "name": "fixedForm",
-    "path": "fixedform",
-    "project": "59b1064f678919000775f836",
-    "created": "2017-09-21T02:08:02.635Z",
     "components": [
         {
             "properties": {
@@ -122,21 +113,7 @@
             "properties": {
                 "": ""
             },
-            "custom": "form.reset(); \n form.render();"
+            "custom": "form.render();"
         }
-    ],
-    "owner": "59b0f3b82f12080007486f7a",
-    "submissionAccess": [],
-    "access": [
-        {
-            "type": "read_all",
-            "roles": [
-                "59b1064f678919000775f837",
-                "59b1064f678919000775f838",
-                "59b1064f678919000775f839"
-            ]
-        }
-    ],
-    "tags": [],
-    "type": "form"
+    ]
 }
