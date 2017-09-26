@@ -14,8 +14,7 @@ var myForm =
     ];
 
 jQuery.each(myForm, function (i, val) {
-    var form = loadForm(val.name);
-    arrForm.push(form);
+    arrForm.push(loadForm(val.name));
 });
 
 function loadForm(JsonFileName) {

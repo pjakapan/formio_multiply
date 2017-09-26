@@ -9,7 +9,7 @@
     border-radius: 4px;
 }
 #result {
-    height: 700px;
+    height: auto;
     overflow-y: auto;
     overflow-x: hidden;
 }
