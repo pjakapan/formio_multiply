@@ -4,13 +4,14 @@
 // -----------------------------------------------------------------------------------------------------------------------------
 function getMuls() {
 
+    var res_html = "";
     var getsettings = {
         "async": true,
         "crossDomain": true,
         "url": "https://togetherdemo.azure-api.net/calc/mul",
         "method": "GET"
     }
-    var res_html = "";
+
     $.ajax(getsettings).done(function (response) {
         $.each(response, function (key, value) {
             var res_id = JSON.stringify(value.ID);
