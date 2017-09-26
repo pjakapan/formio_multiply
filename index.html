@@ -8,6 +8,7 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/moment.min.js"></script>
   <script src="js/loadJsonForm.js"></script>
+  <script src="js/multy.js"></script>
 </head>
 
 <body>
@@ -28,6 +29,9 @@
   <script type="text/javascript">
     window.onload = function () {
 
+      var a = getMul();
+      console.log(a);
+
       // ----------------------------------------------------------------------------------------
       // Load data form azure : start (API)
       // ----------------------------------------------------------------------------------------
@@ -47,10 +51,6 @@
         var res_inputB = "";
         var res_result = "";
         var res_datetimeStamp = "";
-
-        // -----------------------------------------------
-        // bind Results to inner.html
-        // -----------------------------------------------
 
         $.each(response, function (key, value) {
           res_id = JSON.stringify(value.ID);
