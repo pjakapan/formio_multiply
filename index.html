@@ -61,7 +61,7 @@
         $("#result").append(res_html);
       }).fail((error) => {
         console.error(error);
-        var err = "<div class='alert alert-info'><strong>Error! </strong>" + error.statusText + "</div>";
+        var err = "<div class='alert alert-danger'><strong>Error!!</strong>" + error.statusText + "</div>";
         $("#result").append(err);
       });
 
