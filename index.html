@@ -7,6 +7,7 @@
   <script src="js/formio.full.min.js"></script>
   <script src="js/jquery.min.js"></script>
   <script src="js/moment.min.js"></script>
+  <script src="js/loadJsonForm.js"></script>
 </head>
 
 <body>
@@ -21,24 +22,12 @@
   </div>
 
   <script type="text/javascript">
-      function myFunction(JsonFileName) {
-        var json = null;
-        $.ajax({
-          'async': false,
-          'global': false,
-          'url': "json/"+ JsonFileName +".json",
-          'dataType': "json",
-          'success': function (data) {
-            json = data;
-          }
-        });
-        return json;
-      }
+    
     window.onload = function () {
       // -----------------------------------------------------------------------------------------------------------------------------
       // Load form.io with json : start
       // -----------------------------------------------------------------------------------------------------------------------------
-      var form = myFunction("fixedform");
+      var form = loadForm("fixedform");
 
       Formio.createForm(document.getElementById('formio'), form).then(function (instance) {
         console.log(instance);
