@@ -21,23 +21,24 @@
   </div>
 
   <script type="text/javascript">
-    window.onload = function () {
-      // -----------------------------------------------------------------------------------------------------------------------------
-      // Load form.io with json : start
-      // -----------------------------------------------------------------------------------------------------------------------------
-      var form = (function () {
+      function myFunction(a) {
         var json = null;
         $.ajax({
           'async': false,
           'global': false,
-          'url': "json/fixedform.json",
+          'url': "json/"+ a +".json",
           'dataType': "json",
           'success': function (data) {
             json = data;
           }
         });
         return json;
-      })();
+      }
+    window.onload = function () {
+      // -----------------------------------------------------------------------------------------------------------------------------
+      // Load form.io with json : start
+      // -----------------------------------------------------------------------------------------------------------------------------
+      var form = myFunction("fixedform");
 
       Formio.createForm(document.getElementById('formio'), form).then(function (instance) {
         console.log(instance);
@@ -61,7 +62,7 @@
           // -----------------------------------------------
 
           $.ajax(settings).done(function (response) {
-
+            console.log('inserted to datacase successfully.');
             instance.setAlert('success', 'inserted to datacase successfully.');
             window.setTimeout(function () { $(".alert").fadeOut("slow"); }, 2000);
 
@@ -72,6 +73,7 @@
             var res_datetimeStamp = response.Datetimestamp;
             var res_html = "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
             $("#result").prepend(res_html);
+
 
           }).fail(function (error) {
             instance.setAlert('danger', error.statusText);
