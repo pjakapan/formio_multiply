@@ -30,7 +30,6 @@ function getMuls() {
             res_datetimeStamp = value.Datetimestamp;
             res_html += "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
         });
-        console.log(res_html);
         return res_html;
 
     });
