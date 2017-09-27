@@ -61,13 +61,13 @@
         $("#result").append(res_html);
       }).fail((error) => {
         console.error(error);
-        var err = "<div class='alert alert-danger'><strong>Error!!</strong>" + error.statusText + "</div>";
+        var err = "<div class='alert alert-danger'><strong>Error!! </strong>" + error.statusText + "</div>";
         $("#result").append(err);
       });
 
-      // ----------------------------------------------------------------------------------------
-      // Load form.io with json                                                   loadJsonForm.js
-      // ----------------------------------------------------------------------------------------
+      // -------------------------------------------------------------------------------------------------------------------
+      // Load form.io with json                                                                              loadJsonForm.js
+      // -------------------------------------------------------------------------------------------------------------------
 
       Formio.createForm(document.getElementById('formio1'), arrForm[0]).then(function (instance) {
 
@@ -126,7 +126,7 @@
           }
 
           // -----------------------------------------------
-          // bind Result.
+          // Insert data to database.
           // -----------------------------------------------
 
           $.ajax(settings).done(function (response) {
@@ -139,9 +139,15 @@
             var res_inputB = JSON.stringify(response.InputB);
             var res_result = JSON.stringify(response.Result);
             var res_datetimeStamp = response.Datetimestamp;
-            var res_html = "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
-            $("#result").prepend(res_html);
+            
+            var res_html = 
+            "<p class='info'>" + 
+            "<strong>ID: " + res_id + "</strong> " + 
+            "(" + res_inputA + " x " + res_inputB + ") = " + res_result + 
+            "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + 
+            "</p>";
 
+            $("#result").prepend(res_html);
 
           }).fail(function (error) {
             console.log(JSON.stringify(error.statusText));
