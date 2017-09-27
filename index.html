@@ -8,7 +8,6 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/moment.min.js"></script>
   <script src="js/loadJsonForm.js"></script>
-  <script src="js/multy.js"></script>
 </head>
 
 <body>
@@ -24,55 +23,21 @@
     <div class="col-lg-4" id="formio4"></div>
     <div class="col-lg-4" id="formio5"></div>
     <div class="col-lg-4" id="formio6"></div>
+    <div class="col-lg-4" id="formio7"></div>
+    <div class="col-lg-4" id="formio8"></div>
+    <div class="col-lg-4" id="formio9"></div>
+    <div class="col-lg-4" id="formio10"></div>
+    <div class="col-lg-4" id="formio11"></div>
+    <div class="col-lg-4" id="formio12"></div>
   </div>
 
   <script type="text/javascript">
     window.onload = function () {
 
-      // ----------------------------------------------------------------------------------------
-      // Load data form azure : start (API)
-      // ----------------------------------------------------------------------------------------
-
-      var getsettings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://togetherdemo.azure-api.net/calc/mul",
-        "method": "GET"
-      }
-
-      $.ajax(getsettings).done((response) => {
-
-        var res_html = "";
-        var res_id = "";
-        var res_inputA = "";
-        var res_inputB = "";
-        var res_result = "";
-        var res_datetimeStamp = "";
-
-        $.each(response, (key, value) => {
-          res_id = JSON.stringify(value.ID);
-          res_inputA = value.InputA;
-          res_inputB = value.InputB;
-          res_result = value.Result;
-          res_datetimeStamp = value.Datetimestamp;
-          res_html +=
-            "<div class='alert alert-info'>" +
-            "<strong> ID: " + res_id + " </strong>" +
-            " (" + res_inputA + " x " + res_inputB + ") = " + res_result +
-            "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" +
-            "</div>";
-        });
-
-        $("#result").append(res_html);
-      }).fail((error) => {
-        console.error(error);
-        var err = "<div class='alert alert-danger'><strong>Error!! </strong>" + error.statusText + "</div>";
-        $("#result").append(err);
-      });
-
       // -------------------------------------------------------------------------------------------------------------------
       // Load form.io with json                                                                              loadJsonForm.js
       // -------------------------------------------------------------------------------------------------------------------
+
       Formio.createForm(document.getElementById('formio1'), arrForm[0]).then(function (instance) {
 
         // -----------------------------------------------
@@ -169,7 +134,12 @@
       Formio.createForm(document.getElementById('formio4'), arrForm[3]);
       Formio.createForm(document.getElementById('formio5'), arrForm[4]);
       Formio.createForm(document.getElementById('formio6'), arrForm[5]);
-
+      Formio.createForm(document.getElementById('formio7'), arrForm[6]);
+      Formio.createForm(document.getElementById('formio8'), arrForm[7]);
+      Formio.createForm(document.getElementById('formio9'), arrForm[8]);
+      Formio.createForm(document.getElementById('formio10'), arrForm[9]);
+      Formio.createForm(document.getElementById('formio11'), arrForm[10]);
+      Formio.createForm(document.getElementById('formio12'), arrForm[11]);
     };
   </script>
 </body>

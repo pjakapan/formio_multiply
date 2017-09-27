@@ -5,12 +5,24 @@
 var arrForm = [];
 var myForm =
     [
-        { "name": "fixedform.1" },
-        { "name": "fixedform.2" },
-        { "name": "fixedform.3" },
-        { "name": "fixedform.4" },
-        { "name": "fixedform.5" },
-        { "name": "fixedform.6" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" },
+        { "name": "fixedform" }
     ];
 
 jQuery.each(myForm, function (i, val) {
