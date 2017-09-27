@@ -36,7 +36,7 @@
       var getsettings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://togetherdemo.azure-api.net/calc/mulh",
+        "url": "https://togetherdemo.azure-api.net/calc/mul",
         "method": "GET"
       }
 
@@ -55,7 +55,12 @@
           res_inputB = value.InputB;
           res_result = value.Result;
           res_datetimeStamp = value.Datetimestamp;
-          res_html += "<div class='alert alert-info'><strong> ID: " + res_id + " </strong>" + " (" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</div>";
+          res_html +=
+            "<div class='alert alert-info'>" +
+            "<strong> ID: " + res_id + " </strong>" +
+            " (" + res_inputA + " x " + res_inputB + ") = " + res_result +
+            "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" +
+            "</div>";
         });
 
         $("#result").append(res_html);
@@ -68,7 +73,6 @@
       // -------------------------------------------------------------------------------------------------------------------
       // Load form.io with json                                                                              loadJsonForm.js
       // -------------------------------------------------------------------------------------------------------------------
-
       Formio.createForm(document.getElementById('formio1'), arrForm[0]).then(function (instance) {
 
         // -----------------------------------------------
@@ -86,7 +90,7 @@
           }
 
           // -----------------------------------------------
-          // bind Result.
+          // Insert data to database.
           // -----------------------------------------------
 
           $.ajax(settings).done(function (response) {
@@ -99,9 +103,15 @@
             var res_inputB = JSON.stringify(response.InputB);
             var res_result = JSON.stringify(response.Result);
             var res_datetimeStamp = response.Datetimestamp;
-            var res_html = "<p class='info'>" + "<strong>ID: " + res_id + "</strong> " + "(" + res_inputA + " x " + res_inputB + ") = " + res_result + "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + "</p>";
-            $("#result").prepend(res_html);
 
+            var res_html =
+              "<p class='info'>" +
+              "<strong>ID: " + res_id + "</strong> " +
+              "(" + res_inputA + " x " + res_inputB + ") = " + res_result +
+              "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" +
+              "</p>";
+
+            $("#result").prepend(res_html);
 
           }).fail(function (error) {
             console.log(JSON.stringify(error.statusText));
@@ -139,13 +149,13 @@
             var res_inputB = JSON.stringify(response.InputB);
             var res_result = JSON.stringify(response.Result);
             var res_datetimeStamp = response.Datetimestamp;
-            
-            var res_html = 
-            "<p class='info'>" + 
-            "<strong>ID: " + res_id + "</strong> " + 
-            "(" + res_inputA + " x " + res_inputB + ") = " + res_result + 
-            "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" + 
-            "</p>";
+
+            var res_html =
+              "<p class='info'>" +
+              "<strong>ID: " + res_id + "</strong> " +
+              "(" + res_inputA + " x " + res_inputB + ") = " + res_result +
+              "<span class='pull-right' style='color:blue'>" + res_datetimeStamp + "</span>" +
+              "</p>";
 
             $("#result").prepend(res_html);
 
