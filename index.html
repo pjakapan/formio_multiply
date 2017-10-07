@@ -47,7 +47,7 @@
 
           var settings = {
             "crossDomain": true,
-            "url": "https://together.azure-api.net/add/?a=2&b=2",
+            "url": "https://login.microsoftonline.com/common/oauth2/authorize?response_type=id_token&response_mode=form_post&client_id=a78605c9-bd50-46af-a8b1-166fd0b2401e&redirect_uri=https%3A%2F%2Ftogether.azure-api.net%2Fadd%2F%3Fa%3D2%26b%3D2&state=%3Fa%3D2%26b%3D2&nonce=def&resource=a78605c9-bd50-46af-a8b1-166fd0b2401e",
             "method": "POST",
             "headers": { "content-type": "application/json" },
             "data": "{\n\t\"a\": " + submission.data.a + ",\n\t\"b\": " + submission.data.b + "\n}"
