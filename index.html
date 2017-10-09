@@ -34,7 +34,7 @@
     window.onload = function () {
 
       // -------------------------------------------------------------------------------------------------------------------
-      // Load form.io with json                                                                              loadJsonForm.js
+      // Load form.io with json:loadJsonForm.js
       // -------------------------------------------------------------------------------------------------------------------
 
       Formio.createForm(document.getElementById('formio1'), arrForm[0]).then(function (instance) {
@@ -47,10 +47,10 @@
 
           var settings = {
             "crossDomain": true,
-            "url": "https://togetherdemo.azure-api.net/calc/mul",
-            "method": "POST",
-            "headers": { "content-type": "application/json" },
-            "data": "{\n\t\"a\": " + submission.data.a + ",\n\t\"b\": " + submission.data.b + "\n}"
+            "url": "https://alfred-dev-api.azure-api.net/echo/resource?param1=sample&subscription-key=40ba734c4a844e2599f4766504fd9c41&trace=true",
+            "method": "GET",
+            "headers": { "content-type": "application/json" }
+            // "data": "{\n\t\"a\": " + submission.data.a + ",\n\t\"b\": " + submission.data.b + "\n}"
           }
 
           // -----------------------------------------------
@@ -83,6 +83,7 @@
           });
         });
       });
+
       Formio.createForm(document.getElementById('formio2'), arrForm[1]).then(function (instance) {
 
         // -----------------------------------------------
