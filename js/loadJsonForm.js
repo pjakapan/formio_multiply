@@ -30,7 +30,7 @@ jQuery.each(myForm, function (i, val) {
     //arrForm.push(loadForm(val.name));
 });
 
-var url = "https://jpetchan-oriurl.azurewebsites.net/api/cdntoken"
+var url = "https://jpetchan-cdn-token.azurewebsites.net/api/cdntoken2"
 //var cdn = loadcdn();
 var json = null;
 var getsetting = {
