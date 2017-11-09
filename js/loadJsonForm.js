@@ -31,13 +31,13 @@ jQuery.each(myForm, function (i, val) {
 });
 
 function loadForm(JsonFileName) {
-    var url = "json/" + JsonFileName + ".json";
+    var url = JsonFileName + ".json";
     var urlwithcdn = loadcdn(url);
     var json = null;
     var getsetting = {
         'async': false,
         'global': false,
-        'url': urlwithcdn,
+        'url': "json/" + urlwithcdn,
         'dataType': "json",
         "method": "GET"
     }
