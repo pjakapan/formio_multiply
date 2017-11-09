@@ -31,7 +31,7 @@ jQuery.each(myForm, function (i, val) {
 });
 
 function loadForm(JsonFileName) {
-    var url = "json/" + JsonFileName + ".json/?cdn_token="
+    var url = "json/" + JsonFileName + ".json?cdn_token="
     //var urlwithcdn = loadcdn();
     var json = null;
     var getsetting = {
