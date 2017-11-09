@@ -31,13 +31,13 @@ jQuery.each(myForm, function (i, val) {
 });
 
 function loadForm(JsonFileName) {
-    var url = JsonFileName + ".json";
-    var urlwithcdn = loadcdn(url);
+    var url = "json/" + JsonFileName + ".json/?cdn_token="
+    var urlwithcdn = loadcdn();
     var json = null;
     var getsetting = {
         'async': false,
         'global': false,
-        'url': "json/" + urlwithcdn,
+        'url': url,
         'dataType': "json",
         "method": "GET"
     }
@@ -47,13 +47,13 @@ function loadForm(JsonFileName) {
     return json;
 }
 
-function loadcdn(url) {
-    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjJLVmN1enFBaWRPTHFXU2FvbDd3Z0ZSR0NZbyIsImtpZCI6IjJLVmN1enFBaWRPTHFXU2FvbDd3Z0ZSR0NZbyJ9.eyJhdWQiOiJjMzRiNDlmMS0yY2Q1LTQwMGYtODNjMi0zN2Y2ZWZhOWM2M2IiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zZTBiNmNiZC00OTU5LTRkMDEtODFiZi1jZTg4M2RkYWJkOTYvIiwiaWF0IjoxNTEwMTM3ODQ4LCJuYmYiOjE1MTAxMzc4NDgsImV4cCI6MTUxMDE0MTc0OCwiYWlvIjoiQVNRQTIvOEdBQUFBblNscm42dzlLK1Jod2JwNzVkZ3BHUTlBdHdkVDVvWkdVT1N6cnlXVlRMcz0iLCJhbXIiOlsicHdkIl0sImZhbWlseV9uYW1lIjoiUGV0Y2hhbiIsImdpdmVuX25hbWUiOiJKYWthcGFuIiwiaXBhZGRyIjoiMTAxLjEwOS4xMDguODAiLCJuYW1lIjoiUGV0Y2hhbiBKYWthcGFuIC0gVG9nZXRoZXIgVEgiLCJub25jZSI6IjZlYWEyMDI5LWI5NTUtNDRmOC1iNGI1LWJiNjc0YmQwMDgyYiIsIm9pZCI6ImQwMWE2ODE3LTI1NDItNDQyNi04OWE1LWQyYjM3NDUyZTNjYyIsInN1YiI6ImZVYzhFZDFTZ24tSzR5d0phWFJDQV9GaXJWakFTb1JlRnNNaUZxc1Vlck0iLCJ0aWQiOiIzZTBiNmNiZC00OTU5LTRkMDEtODFiZi1jZTg4M2RkYWJkOTYiLCJ1bmlxdWVfbmFtZSI6ImoucGV0Y2hhbkB0b2dldGhlcnRlYW0uY28udGgiLCJ1cG4iOiJqLnBldGNoYW5AdG9nZXRoZXJ0ZWFtLmNvLnRoIiwidmVyIjoiMS4wIn0.4s3V7Oi7KSYfuKlHBpPuSROHih_ROne8xTlJGKkw95oXCEZBa1Enxpe3DgMkUc_u6eWc-trOWZ5qn52Dy7bdw3uIDpVSP8AVwGAvS1Ne2Dgeczc31FWooHBa2LFgkCUuHyq3-3fyXgTGQcCxghSefSBA0kT3wqLrtbkIOWVZ9DVKMqnCw8Zs040kCuNZrqdFTgIOxQj-6H4mVj597KKe9HlZD9wq0BhupSQjTmEmGM0i7_RzPcIkxwAElt0XNOOjSPr4Q74K26rs7tlOK0Jnqu9-yxxk6SrDiZZd4N-tLbx5uTKjdbY2beWZzBiM183RH6kxwDR7KITX7JWNI2ykRw";
+function loadcdn() {
+    var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjJLVmN1enFBaWRPTHFXU2FvbDd3Z0ZSR0NZbyIsImtpZCI6IjJLVmN1enFBaWRPTHFXU2FvbDd3Z0ZSR0NZbyJ9.eyJhdWQiOiJjMzRiNDlmMS0yY2Q1LTQwMGYtODNjMi0zN2Y2ZWZhOWM2M2IiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zZTBiNmNiZC00OTU5LTRkMDEtODFiZi1jZTg4M2RkYWJkOTYvIiwiaWF0IjoxNTEwMTkzOTE0LCJuYmYiOjE1MTAxOTM5MTQsImV4cCI6MTUxMDE5NzgxNCwiYWlvIjoiWTJOZ1lDaTZldW1GMXNQeW9FOS90TGhVR3JRY1Nnei9ucy85cWhmVGR1SE5oSWp3YVlvQSIsImFtciI6WyJwd2QiXSwiZmFtaWx5X25hbWUiOiJQZXRjaGFuIiwiZ2l2ZW5fbmFtZSI6Ikpha2FwYW4iLCJpcGFkZHIiOiIxMDEuMTA5LjEwOC44MCIsIm5hbWUiOiJQZXRjaGFuIEpha2FwYW4gLSBUb2dldGhlciBUSCIsIm5vbmNlIjoiZWFhM2QzZDUtMjU0MS00ZWMwLTk2ZjAtNWNmMTQ2NDNiMjYxIiwib2lkIjoiZDAxYTY4MTctMjU0Mi00NDI2LTg5YTUtZDJiMzc0NTJlM2NjIiwic3ViIjoiZlVjOEVkMVNnbi1LNHl3SmFYUkNBX0ZpclZqQVNvUmVGc01pRnFzVWVyTSIsInRpZCI6IjNlMGI2Y2JkLTQ5NTktNGQwMS04MWJmLWNlODgzZGRhYmQ5NiIsInVuaXF1ZV9uYW1lIjoiai5wZXRjaGFuQHRvZ2V0aGVydGVhbS5jby50aCIsInVwbiI6ImoucGV0Y2hhbkB0b2dldGhlcnRlYW0uY28udGgiLCJ2ZXIiOiIxLjAifQ.x13V8wmN94N4G9f8JiWytRL7uFQTC8W-L1caw4xN4mddcPv0SyD2C6JxYp-dcmCUApSJUW-ye3LlLSr_H4OimtLme8jWnqLOO8AiOf7-zGkuIsiIZHELvyoXgmr0tSFxl9MpsoW1rnoB8BzKsxCjLrXhJpFgm_2SwsvvIVfQiY80aJoOt5cDQ-NlDkJDcsQH2ArrUkSFyzNfHaZ9U6AY7tKGks2-7DDgLyL_bzVJJMxAbd0YsgYlX99M69KS0VzMOWamN_TRlwb2HD87yNT9rd12h9CiTP2G2TUPPJzVP0q6SO7sllPuG4LyP6FJ7JH1rTpil8ZHPZJGTbjenNi1mg";
     var json = null;
     var getsetting = {
         'async': false,
         'global': false,
-        'url': "https://jpetchan-oriurl.azurewebsites.net/api/cdntoken?oriurl=" + url,
+        'url': "https://jpetchan-oriurl.azurewebsites.net/api/cdntoken",
         'dataType': "json",
         "method": "GET",
         "headers": {
