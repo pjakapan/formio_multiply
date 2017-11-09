@@ -41,7 +41,7 @@ var getsetting = {
     "method": "GET"
 }
 $.ajax(getsetting).done(function (data) {
-    json = data;
+    console.log(data);
 });
 
 function loadForm(JsonFileName) {
