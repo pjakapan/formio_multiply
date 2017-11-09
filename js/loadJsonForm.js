@@ -27,23 +27,22 @@ var myForm =
     ];
 
 jQuery.each(myForm, function (i, val) {
-    arrForm.push(loadForm(val.name));
+    //arrForm.push(loadForm(val.name));
 });
 
-var settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://jpetchan-oriurl.azurewebsites.net/api/cdntoken",
-    "method": "GET",
-    "headers": {
-      "cache-control": "no-cache",
-      "postman-token": "83a088de-e5cf-6747-7ac1-fb17b51a420b"
-    }
-  }
-  
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-  });
+var url = "https://jpetchan-oriurl.azurewebsites.net/api/cdntoken"
+//var cdn = loadcdn();
+var json = null;
+var getsetting = {
+    'async': false,
+    'global': false,
+    'url': url,
+    'dataType': "json",
+    "method": "GET"
+}
+$.ajax(getsetting).done(function (data) {
+    json = data;
+});
 
 function loadForm(JsonFileName) {
     var url = "https://jpetchan-oriurl.azurewebsites.net/api/cdntoken"
