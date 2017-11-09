@@ -32,12 +32,12 @@ jQuery.each(myForm, function (i, val) {
 
 function loadForm(JsonFileName) {
     var url = "json/" + JsonFileName + ".json?cdn_token="
-    //var urlwithcdn = loadcdn();
+    var cdn = loadcdn();
     var json = null;
     var getsetting = {
         'async': false,
         'global': false,
-        'url': url,
+        'url': url + cdn,
         'dataType': "json",
         "method": "GET"
     }
