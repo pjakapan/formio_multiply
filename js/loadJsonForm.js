@@ -27,7 +27,7 @@ var myForm =
     ];
 
 jQuery.each(myForm, function (i, val) {
-    //arrForm.push(loadForm(val.name));
+    arrForm.push(loadForm(val.name));
 });
 
 var url = "https://jpetchan-cdn-token.azurewebsites.net/api/cdntoken2"
