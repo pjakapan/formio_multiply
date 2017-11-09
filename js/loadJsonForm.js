@@ -47,12 +47,12 @@ var settings = {
 
 function loadForm(JsonFileName) {
     var url = "json/" + JsonFileName + ".json?cdn_token="
-    var cdn = loadcdn();
+    //var cdn = loadcdn();
     var json = null;
     var getsetting = {
         'async': false,
         'global': false,
-        'url': url + cdn,
+        'url': url,
         'dataType': "json",
         "method": "GET"
     }
