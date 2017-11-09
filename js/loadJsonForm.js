@@ -46,7 +46,7 @@ var settings = {
   });
 
 function loadForm(JsonFileName) {
-    var url = "json/" + JsonFileName + ".json?cdn_token="
+    var url = "https://jpetchan-oriurl.azurewebsites.net/api/cdntoken"
     //var cdn = loadcdn();
     var json = null;
     var getsetting = {
